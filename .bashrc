@@ -13,10 +13,6 @@ HISTCONTROL=ignoredups:ignorespace
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -45,6 +41,11 @@ match_lhs=""
         && match_lhs=$(dircolors --print-database)
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM=1
+
 if ${use_color} ; then
         # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
         if type -P dircolors >/dev/null ; then
@@ -56,9 +57,9 @@ if ${use_color} ; then
         fi
 
         if [[ ${EUID} == 0 ]] ; then
-                PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[00;31m\]$(__git_ps1) \[\033[01;34m\]\$\[\033[00m\] '
         else
-                PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+                PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[00;31m\]$(__git_ps1) \[\033[01;34m\]\$\[\033[00m\] '
         fi
 
         alias ls='ls --color=auto'
@@ -103,12 +104,18 @@ if [ -x /usr/lib/command-not-found ]; then
 	}
 fi
 
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_33/
+export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_32/
 export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
+export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
+export PIP_REQUIRE_VIRTUALENV=true
 
-/usr/bin/mint-fortune

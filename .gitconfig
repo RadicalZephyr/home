@@ -7,11 +7,20 @@
 [color]
 	ui = auto
 [alias]
-        gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m" -n15
-        au = update-index --assume-unchanged
+  gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m" -n15
+  au = update-index --assume-unchanged
+	last = log -n1
+	last-diff = diff HEAD~ HEAD
+	no-au = update-index
 [giggle]
 	main-window-maximized = true
 	main-window-geometry = 465x281+665+24
 	file-view-vpane-position = 567
 	history-view-vpane-position = 624
 	main-window-view = FileView
+[apply]
+	ignorewhitespace = change
+[merge]
+	tool = meld
+[branch]
+	autosetuprebase = always
