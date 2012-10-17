@@ -13,6 +13,10 @@ HISTCONTROL=ignoredups:ignorespace
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -113,9 +117,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_32/
+export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_33/
 export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export PIP_REQUIRE_VIRTUALENV=true
 
+/usr/bin/mint-fortune
