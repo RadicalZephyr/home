@@ -118,10 +118,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_33/
+export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_37/
 export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export PIP_REQUIRE_VIRTUALENV=true
 
-/usr/bin/mint-fortune
