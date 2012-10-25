@@ -26,3 +26,5 @@
   browser = google-chrome
 [help]
   format = web
+[push]
+	default = simple
