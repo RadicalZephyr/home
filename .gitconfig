@@ -13,6 +13,7 @@
   last = log -n1
   last-diff = diff HEAD~ HEAD
   no-au = update-index --no-assume-unchanged
+	pack = !git archive -o agman-$(git tag | sort -rVk1.2 | head -n1).zip HEAD
 [giggle]
   main-window-maximized = true
   main-window-geometry = 465x281+665+24
