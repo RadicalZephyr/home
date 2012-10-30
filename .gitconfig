@@ -2,6 +2,7 @@
   name = Geoff Shannon
   email = earthlingzephyr@gmail.com
 [core]
+  autocrlf = input
   editor = emacsclient -nw -a \"\"
   excludesfile = /home/geoff/.gitignore_global
 [color]
