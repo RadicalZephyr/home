@@ -22,3 +22,4 @@ mvnrun () {
 
 alias mvnt='mvnrun clean test'
 alias mint='mvnrun clean install -Dmaven.test.skip=true'
+alias mintrun='mint && cd integration-test;mvn cargo:run'
