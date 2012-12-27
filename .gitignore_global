@@ -16,6 +16,7 @@
 *.ali
 *.elc
 b~*
+*.pyc
 
 # Packages #
 ############
