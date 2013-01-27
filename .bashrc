@@ -124,3 +124,4 @@ export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export PIP_REQUIRE_VIRTUALENV=true
 
+eval `keychain --eval id_rsa`
