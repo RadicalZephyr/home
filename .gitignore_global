@@ -3,6 +3,8 @@
 *~
 *.bak*
 *.bk*
+.emacs.desktop
+.emacs.desktop.lock
 
 # Compiled source #
 ###################
