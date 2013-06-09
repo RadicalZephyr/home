@@ -1,5 +1,5 @@
 packages installed:
-build-essential ubuntu-dev-tools cmake libboost-dev libboost-doc llvm-3.0 llvm-3.0-dev llvm-3.0-doc llvm-3.0-examples llvm-3.0-source openjdk-7-jdk openjdk-7-doc openjdk-7-source virtualbox ghc racket sbcl erlang subversion mercurial bzr ruby1.9.1-full tree swig gphoto2 gnuplot filezilla ghostscript octave
+build-essential ubuntu-dev-tools cmake libboost-dev libboost-doc llvm-3.0 llvm-3.0-dev llvm-3.0-doc llvm-3.0-examples llvm-3.0-source openjdk-7-jdk openjdk-7-doc openjdk-7-source virtualbox ghc racket sbcl erlang subversion mercurial bzr ruby1.9.1-full tree swig gphoto2 gnuplot filezilla ghostscript octave emacs24
 
 #sources:
 echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list.d/virtualbox.list
