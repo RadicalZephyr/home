@@ -17,6 +17,7 @@ tramp
 
 # Compiled source #
 ###################
+*.gch
 *.beam
 *.com
 *.class
