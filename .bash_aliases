@@ -12,3 +12,7 @@ alias l='ls -CF'
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
+
+function apt-update {
+    sudo aptitude update && sudo aptitude full-upgrade -y
+}
