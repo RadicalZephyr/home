@@ -12,14 +12,3 @@ alias l='ls -CF'
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
-
-# maven build aliases
-mvnrun () {
-    echo mvn $@
-    eval mvn $@
-    echo mvn $@
-}
-
-alias mvnt='mvnrun clean test'
-alias mint='mvnrun clean install -Dmaven.test.skip=true'
-alias mintrun='mint && cd integration-test;mvn cargo:run'
