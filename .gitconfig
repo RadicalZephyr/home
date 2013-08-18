@@ -1,6 +1,6 @@
 [user]
   name = Geoff Shannon
-  email = earthlingzephyr@gmail.com
+  email = geoffpshannon@gmail.com
 [core]
   autocrlf = input
   editor = emacsclient -nw -a \"\"
