@@ -13,20 +13,20 @@
   last = log -n1
   last-diff = diff HEAD~ HEAD
   no-au = update-index --no-assume-unchanged
-	pack = !git archive -o agman-$(git tag | sort -rVk1.2 | head -n1).zip HEAD
-	ignore = !echo >> .gitignore
+  pack = !git archive -o agman-$(git tag | sort -rVk1.2 | head -n1).zip HEAD
+  ignore = !echo >> .gitignore
 [giggle]
-	main-window-maximized = false
-	main-window-geometry = 1029x675+3+49
-	file-view-vpane-position = 611
-	history-view-vpane-position = 547
-	main-window-view = FileView
+  main-window-maximized = false
+  main-window-geometry = 1029x675+3+49
+  file-view-vpane-position = 611
+  history-view-vpane-position = 547
+  main-window-view = FileView
 [apply]
   ignorewhitespace = change
 [merge]
   tool = meld
 [web]
-  browser = google-chrome
+  browser = firefox
 [help]
   format = web
 [push]
