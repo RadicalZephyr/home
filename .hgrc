@@ -1,0 +1,5 @@
+[ui]
+
+username = Geoff Shannon <geoffpshannon@gmail.com>
+
+ignore = ~/.hgignore_global
