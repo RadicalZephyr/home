@@ -1,3 +1,0 @@
-syntax: glob
-
-ignore.other = ~/.gitignore_global

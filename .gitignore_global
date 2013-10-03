@@ -1,3 +1,7 @@
+# Change mercurial syntax to git style.
+# Git doesn't recognize it, and thus ignores it.
+syntax: glob
+
 # Editor files #
 ################
 *~
