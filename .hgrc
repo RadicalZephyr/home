@@ -3,3 +3,6 @@
 username = Geoff Shannon <geoffpshannon@gmail.com>
 
 ignore = ~/.gitignore_global
+
+[extensions]
+graphlog =
