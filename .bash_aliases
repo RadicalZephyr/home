@@ -12,12 +12,3 @@ alias l='ls -CF'
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
-
-function su-apt-update {
-    sudo aptitude update && sudo aptitude full-upgrade -y
-}
-
-function su-apt-update-down {
-   su-apt-update
-   sudo shutdown -p now
-}
