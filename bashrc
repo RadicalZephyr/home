@@ -126,5 +126,5 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 SRC=~/src
 export LOCAL=~/local
-export PATH="$HOME/.rbenv/bin:$LOCAL/bin:$PATH:$LOCAL/android-sdk-linux/platform-tools:$JAVA_HOME/bin""
+export PATH="$HOME/.rvm/bin:$LOCAL/bin:$PATH:$LOCAL/android-sdk-linux/platform-tools:$JAVA_HOME/bin"
 export PRINTER=CF405
