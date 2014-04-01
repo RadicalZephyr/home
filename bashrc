@@ -128,3 +128,7 @@ SRC=~/src
 export LOCAL=~/local
 export PATH="$HOME/.rvm/bin:$LOCAL/bin:$PATH:$LOCAL/android-sdk-linux/platform-tools:$JAVA_HOME/bin"
 export PRINTER=CF405
+
+export PKG_CONFIG_PATH=$LOCAL/lib/pkgconfig:$PKG_CONFIG_PATH
+export C_INCLUDE_PATH=$LOCAL/include
+export CPLUS_INCLUDE_PATH=$LOCAL/include
