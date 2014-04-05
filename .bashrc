@@ -125,5 +125,5 @@ export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export PIP_REQUIRE_VIRTUALENV=true
 export PATH="$HOME/.rbenv/bin:$PATH:$HOME/local/bin:$HOME/local/android-sdk-linux/tools:$HOME/local/android-sdk-linux/platform-tools:$JAVA_HOME/bin"
 
-eval `keychain --eval id_rsa`
+eval `keychain --eval id_rsa 11F056F5`
 eval "$(rbenv init -)"
