@@ -15,6 +15,9 @@ auto-save-list
 tramp
 .\#*
 
+# AucTex
+auto/
+
 # Org-mode
 .org-id-locations
 *_archive
