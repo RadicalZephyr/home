@@ -129,6 +129,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 PATH="$PATH:$JAVA_HOME/bin"
 PATH="$PATH:$HOME/local/android-sdk-linux/tools"
 PATH="$PATH:$HOME/local/android-sdk-linux/platform-tools"
+PATH="$PATH:$HOME/local/gradle-1.12/bin"
 
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
