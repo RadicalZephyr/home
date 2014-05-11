@@ -39,6 +39,8 @@ b~*
 *.aux
 *.fdb_latexmk
 *.fls
+*.bbl
+*.blg
 
 # Packages #
 ############
