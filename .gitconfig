@@ -10,10 +10,10 @@
 [alias]
   gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m" -n15
   au = update-index --assume-unchanged
+  no-au = update-index --no-assume-unchanged
   last = log -n1
   last-diff = diff HEAD~ HEAD
-  no-au = update-index --no-assume-unchanged
-  pack = !git archive -o agman-$(git tag | sort -rVk1.2 | head -n1).zip HEAD
+  pack = !git archive -o $(git tag | sort -rVk1.2 | head -n1).zip HEAD
   ignore = !echo >> .gitignore
 [giggle]
   main-window-maximized = false
@@ -23,8 +23,6 @@
   main-window-view = FileView
 [apply]
   ignorewhitespace = change
-[merge]
-  tool = meld
 [web]
   browser = firefox
 [help]
