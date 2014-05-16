@@ -1,8 +1,6 @@
 # emacsclient shortcuts
 alias emacsclientn='emacsclient -n -a ""'
 alias emacsc='emacsclient -c -n'
-alias cp='cp -v'
-alias mv='mv -v'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -12,3 +10,7 @@ alias l='ls -CF'
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
+
+# Useful alias for android work in labs
+alias padb='ps u `pgrep adb`'
+alias adbl='adb devices'
