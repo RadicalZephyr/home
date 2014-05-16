@@ -137,7 +137,7 @@ PATH="$HOME/local/bin:$PATH"
 export PATH
 
 
-eval `keychain`
+keychain 'id_rsa'
 eval "$(rbenv init -)"
 
 adb kill-server && adb start-server
