@@ -139,3 +139,5 @@ export PATH
 
 eval `keychain`
 eval "$(rbenv init -)"
+
+adb kill-server && adb start-server
