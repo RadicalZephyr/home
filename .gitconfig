@@ -4,7 +4,7 @@
 [core]
   autocrlf = input
   editor = emacsclient -nw -a \"\"
-  excludesfile = /home/geoff/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [color]
   ui = auto
 [alias]
