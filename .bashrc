@@ -118,7 +118,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
