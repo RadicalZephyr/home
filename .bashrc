@@ -122,6 +122,7 @@ export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export PIP_REQUIRE_VIRTUALENV=true
+export ATTACHE_ROOT=/home/geoff/prog/bash/attache
 
 # Add lots of stuff to my PATH
 
