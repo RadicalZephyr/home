@@ -129,6 +129,7 @@ export EDITOR='emacsclient'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
+export SCALA_HOME=$HOME/local/scala-2.11.1
 export HERMIT_ROOT=~/prog/bash/hermit
 export HOMEBREW_GITHUB_API_TOKEN=""
 export GH_USERNAME="RadicalZephyr"
@@ -141,6 +142,7 @@ PATH="$PATH:$JAVA_HOME/bin"
 PATH="$PATH:$HOME/local/android-sdk-linux/tools"
 PATH="$PATH:$HOME/local/android-sdk-linux/platform-tools"
 PATH="$PATH:$HOME/local/gradle-1.12/bin"
+PATH="$PATH:$SCALA_HOME/bin"
 
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
