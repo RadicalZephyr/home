@@ -133,6 +133,7 @@ PATH="$PATH:$HOME/local/gradle-1.12/bin"
 
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 PATH="$HERMIT_ROOT/bin:$PATH" # This loads Hermit
 
 export PATH
