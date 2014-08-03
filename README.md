@@ -1,5 +1,5 @@
 Home
 ----
 
-My dotfiles repo.  I use [Briefcase](http://jim.github.io/briefcase/)
+My dotfiles repo.  I use [Hermit](http://www.zephyrizing.net/hermit/)
 to manage it.  You should check it out.
