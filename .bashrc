@@ -122,7 +122,7 @@ export EDITOR='emacsclient -a ""'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
-export ATTACHE_ROOT=$HOME/prog/bash/attache
+export HERMIT_ROOT=$HOME/prog/bash/hermit
 
 # Add lots of stuff to my PATH
 
