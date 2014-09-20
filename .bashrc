@@ -138,8 +138,10 @@ PATH="$HERMIT_ROOT/bin:$PATH" # This loads Hermit
 
 export PATH
 
-
-keychain 'id_rsa'
+if which keychain >/dev/null
+then
+    keychain 'id_rsa'
+fi
 
 if which rbenv >/dev/null
 then
