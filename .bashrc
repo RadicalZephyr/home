@@ -151,3 +151,8 @@ then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+if which opam > /dev/null
+then
+    eval `opam config env`
+fi
