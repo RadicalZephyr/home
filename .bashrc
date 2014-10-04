@@ -91,9 +91,16 @@ unset use_color safe_term match_lhs
 #    ;;
 #esac
 
+if which brew  > /dev/null
+then
+    PREFIX=$(brew --prefix)
+else
+    PREFIX=""
+fi
+
 # enable bash completion in interactive shells
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+if [ -f $PREFIX/etc/bash_completion ]; then
+    . $PREFIX/etc/bash_completion
 fi
 
 # if the command-not-found package is installed, use it
