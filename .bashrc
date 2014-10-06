@@ -142,8 +142,13 @@ PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="$HERMIT_ROOT/bin:$PATH" # This loads Hermit
-
 export PATH
+
+# If homebrew is available put coreutils directly on front of PATH
+if which brew >/dev/null
+then
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
 
 if which keychain >/dev/null
 then
