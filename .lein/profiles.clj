@@ -7,5 +7,4 @@
             [lein-marginalia "0.7.1"]
             [cider/cider-nrepl "0.8.0-SNAPSHOT"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-  :dependencies [[slamhound "1.3.3"]]
-  :launch4j-install-dir "/home/geoff/bin/launch4j"}}
+  :dependencies [[slamhound "1.3.3"]]}}
