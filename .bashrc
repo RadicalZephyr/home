@@ -130,6 +130,7 @@ export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
 export HERMIT_ROOT=~/.hermit
+export GH_USERNAME="RadicalZephyr"
 
 # Add lots of stuff to my PATH
 
