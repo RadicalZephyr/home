@@ -3,7 +3,7 @@
   email = geoffpshannon@gmail.com
 [core]
   autocrlf = input
-  excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
   ui = auto
 [alias]
@@ -14,6 +14,7 @@
   last-diff = diff HEAD~ HEAD
   pack = !git archive -o $(git tag | sort -rVk1.2 | head -n1).zip HEAD
   ignore = !echo >> .gitignore
+	gh-init = !github-init
 [giggle]
   main-window-maximized = false
   main-window-geometry = 1029x675+3+49
@@ -22,8 +23,6 @@
   main-window-view = FileView
 [apply]
   ignorewhitespace = change
-[web]
-  browser = firefox
 [help]
   format = web
 [push]
