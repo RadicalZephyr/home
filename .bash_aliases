@@ -11,6 +11,6 @@ alias l='ls -CF'
 alias cp='cp -v'
 alias mv='mv -v'
 
-# Useful alias for android work in labs
-alias padb='ps u `pgrep adb`'
-alias adbl='adb devices'
+# Make diff work better
+alias diff='diff -u'
+
