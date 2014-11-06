@@ -3,7 +3,6 @@
   email = geoffpshannon@gmail.com
 [core]
   autocrlf = input
-  editor = emacsclient -nw -a \"\"
   excludesfile = ~/.gitignore_global
 [color]
   ui = auto

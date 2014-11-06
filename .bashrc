@@ -125,7 +125,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export EDITOR='emacsclient -a ""'
+export EDITOR='zile'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
