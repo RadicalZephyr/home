@@ -14,3 +14,6 @@ alias mv='mv -v'
 # Make diff work better
 alias diff='diff -u'
 
+# Make emacs more functional
+alias emacs='emacsclient -n'
+
