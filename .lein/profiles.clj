@@ -7,4 +7,4 @@
             [lein-marginalia "0.7.1"]
             [cider/cider-nrepl "0.8.2-SNAPSHOT"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-  :dependencies [[slamhound "1.3.3"]]}}
+  :dependencies [[slamhound "1.5.5"]]}}
