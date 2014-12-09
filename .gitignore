@@ -1,1 +1,3 @@
 .briefcase_secrets
+*.hermit_complete
+*.hermit_secrets

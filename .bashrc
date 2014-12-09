@@ -129,8 +129,11 @@ export EDITOR='zile'
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
-export HERMIT_ROOT=~/.hermit
+export HERMIT_ROOT=~/prog/bash/hermit
+export HOMEBREW_GITHUB_API_TOKEN=""
 export GH_USERNAME="RadicalZephyr"
+export GH_API_TOKEN=""
+
 
 # Add lots of stuff to my PATH
 
