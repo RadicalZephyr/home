@@ -5,6 +5,7 @@
             [lein-clojars "0.9.1"]
             [lein-midje "3.0.1"]
             [lein-marginalia "0.7.1"]
-            [cider/cider-nrepl "0.9.0-SNAPSHOT"]]
+            [cider/cider-nrepl "0.9.0-SNAPSHOT"]
+            [refactor-nrepl "0.2.2"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
   :dependencies [[slamhound "1.5.5"]]}}
