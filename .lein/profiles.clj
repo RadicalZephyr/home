@@ -7,4 +7,5 @@
             [cider/cider-nrepl "0.9.0-SNAPSHOT"]
             [refactor-nrepl "0.2.2"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-  :dependencies [[slamhound "1.5.5"]]}}
+  :dependencies [[org.clojure/tools.nrepl "0.2.10"]
+                 [slamhound "1.5.5"]]}}
