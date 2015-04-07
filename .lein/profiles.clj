@@ -7,6 +7,9 @@
             [cider/cider-nrepl "0.9.0-SNAPSHOT"]
             [refactor-nrepl "1.0.1"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-  :dependencies [[org.clojure/tools.nrepl "0.2.10"]
+  :dependencies [[radicalzephyr/repl-utils "0.1.0"]
+                 [org.clojure/tools.nrepl "0.2.10"]
                  [slamhound "1.5.5"]]
+  :repl-options {:init (require '[radicalzephyr.repl-utils
+                                  :refer :all])}
   :repositories [["clojars" {:creds :gpg}]]}}
