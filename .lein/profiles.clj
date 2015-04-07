@@ -8,4 +8,5 @@
             [refactor-nrepl "1.0.1"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
   :dependencies [[org.clojure/tools.nrepl "0.2.10"]
-                 [slamhound "1.5.5"]]}}
+                 [slamhound "1.5.5"]]
+  :repositories [["clojars" {:creds :gpg}]]}}
