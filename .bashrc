@@ -174,3 +174,8 @@ if which opam > /dev/null
 then
     eval `opam config env`
 fi
+
+if which direnv > /dev/null
+then
+    eval "$(direnv hook bash)"
+fi
