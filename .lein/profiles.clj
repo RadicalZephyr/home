@@ -1,5 +1,5 @@
 {:user
- {:plugins [[lein-ritz "0.6.0"]
+ {:plugins [[lein-ritz "0.7.0"]
             [lein-pprint "1.1.1"]
             [lein-clojars "0.9.1"]
             [lein-midje "3.1.3"]
