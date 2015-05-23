@@ -3,6 +3,7 @@
             [lein-pprint "1.1.1"]
             [lein-clojars "0.9.1"]
             [lein-midje "3.1.3"]
+            [lein-checkall "0.1.1"]
             [lein-marginalia "0.7.1"]
             [cider/cider-nrepl "0.9.0-SNAPSHOT"]
             [refactor-nrepl "1.0.5"]]
