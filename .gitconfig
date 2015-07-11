@@ -16,6 +16,7 @@
   pack = !git archive -o $(git tag | sort -rVk1.2 | head -n1).zip HEAD
   ignore = !echo >> .gitignore
 	gh-init = !github-init
+	gh-cl = !echo git clone git@github.com:${1}.git $2
 [giggle]
   main-window-maximized = false
   main-window-geometry = 1029x675+3+49
