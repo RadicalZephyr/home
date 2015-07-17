@@ -17,3 +17,5 @@ alias diff='diff -u'
 # Make emacs more functional
 alias emacs='emacsclient -n'
 
+# Shorten working with bundler
+alias be='bundle exec'
