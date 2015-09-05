@@ -11,7 +11,10 @@
   :dependencies [[radicalzephyr/repl-utils "0.2.0"]
                  [org.clojure/tools.namespace "0.2.10"]
                  [org.clojure/tools.nrepl "0.2.10"]
+                 [com.gfredericks/debug-repl "0.0.6"]
                  [slamhound "1.5.5"]]
   :repl-options {:init (require '[radicalzephyr.repl-utils
-                                  :refer :all])}
+                                  :refer :all])
+                 :nrepl-middleware
+                 [com.gfredericks.debug-repl/wrap-debug-repl]}
   :repositories [["clojars" {:creds :gpg}]]}}
