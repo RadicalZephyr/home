@@ -19,3 +19,5 @@ alias emacs='emacsclient -n'
 
 # Shorten working with bundler
 alias be='bundle exec'
+
+alias pretty-path='echo $PATH | tr : "\n"'
