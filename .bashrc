@@ -139,9 +139,8 @@ source .bashrc.secrets
 # Add lots of stuff to my PATH
 
 PATH="$PATH:$JAVA_HOME/bin"
-PATH="$PATH:$HOME/local/android-sdk-linux/tools"
-PATH="$PATH:$HOME/local/android-sdk-linux/platform-tools"
-PATH="$PATH:$HOME/local/gradle-1.12/bin"
+PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
+PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
 PATH="$PATH:$SCALA_HOME/bin"
 
 PATH="$HOME/.rbenv/bin:$PATH"
