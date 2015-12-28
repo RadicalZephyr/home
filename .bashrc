@@ -134,7 +134,7 @@ export SCALA_HOME=$HOME/local/scala-2.11.1
 export HERMIT_ROOT=~/prog/bash/hermit
 export GH_USERNAME="RadicalZephyr"
 
-source .bashrc.secrets
+source ~/.bashrc.secrets
 
 # Add lots of stuff to my PATH
 
