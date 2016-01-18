@@ -147,7 +147,7 @@ PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-PATH="$HERMIT_ROOT/bin:$PATH" # This loads Hermit
+PATH="$HOME/.multirust/toolchains/stable/cargo/bin"
 export PATH
 
 # If homebrew is available put coreutils directly on front of PATH
