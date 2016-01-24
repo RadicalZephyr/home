@@ -147,7 +147,7 @@ PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-PATH="$HOME/.multirust/toolchains/stable/cargo/bin"
+PATH="$HOME/.multirust/toolchains/stable/cargo/bin:$PATH"
 export PATH
 
 # If homebrew is available put coreutils directly on front of PATH
