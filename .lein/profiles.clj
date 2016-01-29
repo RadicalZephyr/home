@@ -14,8 +14,10 @@
                  [org.clojure/tools.trace "0.7.9"]
                  [com.gfredericks/debug-repl "0.0.7"]
                  [slamhound "1.5.5"]]
-  :repl-options {:init (require '[radicalzephyr.repl-utils
-                                  :refer :all])
+  :repl-options {:init (do
+                         (require '[radicalzephyr.repl-utils
+                                    :refer :all])
+                         (set! *print-length* 100))
                  :nrepl-middleware
                  [com.gfredericks.debug-repl/wrap-debug-repl]}
   :repositories [["clojars" {:creds :gpg}]]}}
