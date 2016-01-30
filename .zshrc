@@ -59,6 +59,8 @@ export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
 export HERMIT_ROOT=~/prog/bash/hermit
+export PYENV_ROOT=~/.pyenv
+export RBENV_ROOT=~/.rbenv
 export GH_USERNAME="RadicalZephyr"
 export LANG=en_US.UTF-8
 
@@ -70,9 +72,10 @@ PATH="$PATH:$JAVA_HOME/bin"
 PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
 PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
 
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$HOME/.pyenv/bin:$PATH"
+PATH="$PYENV_ROOT/bin:$PATH"
+PATH="$RBENV_ROOT/bin:$PATH"
 PATH="$HOME/local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/.multirust/toolchains/stable/cargo/bin:$PATH"
 export PATH
