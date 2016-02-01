@@ -88,7 +88,7 @@ fi
 
 if which keychain >/dev/null
 then
-    eval $(keychain --eval id_rsa code_reviewer_id_rsa 11F056F5 9F73ECFA)
+    eval $(keychain --eval id_rsa code_reviewer_id_rsa)
 fi
 
 if which rbenv >/dev/null
