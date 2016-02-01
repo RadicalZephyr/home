@@ -52,6 +52,7 @@ ZSH_THEME="bira"
 plugins=(gitfast, compleat)
 
 # User configuration
+unsetopt AUTO_CD
 
 export EDITOR='zile'
 export VISUAL='zile'
