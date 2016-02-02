@@ -56,14 +56,18 @@ unsetopt AUTO_CD
 
 export EDITOR='zile'
 export VISUAL='zile'
+export LANG=en_US.UTF-8
+
+export GH_USERNAME="RadicalZephyr"
+export PIP_REQUIRE_VIRTUALENV=true
+export BOOT_EMIT_TARGET=no
+
 export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
-export PIP_REQUIRE_VIRTUALENV=true
+
 export HERMIT_ROOT=~/prog/bash/hermit
 export PYENV_ROOT=~/.pyenv
 export RBENV_ROOT=~/.rbenv
-export GH_USERNAME="RadicalZephyr"
-export LANG=en_US.UTF-8
 
 source ~/.bashrc.secrets
 
