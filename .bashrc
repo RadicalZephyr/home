@@ -91,7 +91,7 @@ unset use_color safe_term match_lhs
 #    ;;
 #esac
 
-if which brew  > /dev/null
+if which brew  > /dev/null 2>&1
 then
     PREFIX=$(brew --prefix)
 else
@@ -151,33 +151,33 @@ PATH="$HOME/.multirust/toolchains/stable/cargo/bin:$PATH"
 export PATH
 
 # If homebrew is available put coreutils directly on front of PATH
-if which brew >/dev/null
+if which brew >/dev/null 2>&1
 then
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-if which keychain >/dev/null
+if which keychain >/dev/null 2>&1
 then
     keychain 'id_rsa'
 fi
 
-if which rbenv >/dev/null
+if which rbenv >/dev/null 2>&1
 then
     eval "$(rbenv init -)"
 fi
 
-if which pyenv > /dev/null
+if which pyenv > /dev/null 2>&1
 then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
-if which opam > /dev/null
+if which opam > /dev/null 2>&1
 then
     eval `opam config env`
 fi
 
-if which direnv > /dev/null
+if which direnv > /dev/null 2>&1
 then
     eval "$(direnv hook bash)"
 fi
