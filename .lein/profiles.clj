@@ -5,8 +5,8 @@
             [lein-marginalia "0.8.0"]
             [lein-ancient "0.6.8"]
             [jonase/eastwood "0.2.2"]
-            [cider/cider-nrepl "0.11.0-SNAPSHOT"]
-            [refactor-nrepl "2.0.0-SNAPSHOT"]]
+            [cider/cider-nrepl "0.12.0-SNAPSHOT"]
+            [refactor-nrepl "2.3.0-SNAPSHOT"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
   :dependencies [[radicalzephyr/repl-utils "0.2.0"]
                  [org.clojure/tools.namespace "0.2.11"]
