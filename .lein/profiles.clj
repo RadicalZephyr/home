@@ -1,10 +1,7 @@
 {:user
  {:exclusions [cider/cider-nrepl]
   :plugins [[lein-pprint "1.1.1"]
-            [lein-midje "3.2"]
-            [lein-marginalia "0.8.0"]
             [lein-ancient "0.6.8"]
-            [jonase/eastwood "0.2.2"]
             [cider/cider-nrepl "0.12.0-SNAPSHOT"]
             [refactor-nrepl "2.3.0-SNAPSHOT"]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
