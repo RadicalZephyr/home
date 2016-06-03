@@ -4,8 +4,6 @@
             [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
   :dependencies [[radicalzephyr/repl-utils "0.2.0"]
-                 [org.clojure/tools.namespace "0.2.11"]
-                 [org.clojure/tools.nrepl "0.2.12"]
                  [org.clojure/tools.trace "0.7.9"]
                  [com.gfredericks/debug-repl "0.0.7"]
                  [slamhound "1.5.5"]]
