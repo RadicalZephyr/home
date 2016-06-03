@@ -1,9 +1,7 @@
 {:user
  {:exclusions [cider/cider-nrepl]
   :plugins [[lein-pprint "1.1.1"]
-            [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]
-            [cider/cider-nrepl "0.12.0-SNAPSHOT"]
-            [refactor-nrepl "2.3.0-SNAPSHOT"]]
+            [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]]
   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
   :dependencies [[radicalzephyr/repl-utils "0.2.0"]
                  [org.clojure/tools.namespace "0.2.11"]
