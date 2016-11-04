@@ -127,7 +127,6 @@ fi
 
 export EDITOR='zile'
 export VISUAL='zile'
-export M2_HOME=/usr/share/maven
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
 export SCALA_HOME=$HOME/local/scala-2.11.1
