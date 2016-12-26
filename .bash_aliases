@@ -1,7 +1,3 @@
-# emacsclient shortcuts
-alias emacsclientn='emacsclient -n -a ""'
-alias emacsc='emacsclient -c -n'
-
 # some more ls aliases
 alias ll='ls -alhF'
 alias la='ls -A'
