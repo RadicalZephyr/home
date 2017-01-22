@@ -14,6 +14,7 @@ syntax: glob
 auto-save-list
 tramp
 .\#*
+.dir-locals.el
 
 # AucTex
 auto/
