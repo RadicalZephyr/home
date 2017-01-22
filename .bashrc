@@ -132,6 +132,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 export SCALA_HOME=$HOME/local/scala-2.11.1
 export HERMIT_ROOT=~/prog/bash/hermit
 export GH_USERNAME="RadicalZephyr"
+export CLOJARS_USERNAME="earthlingzephyr"
 export BOOT_EMIT_TARGET=no
 export ANSIBLE_COW_SELECTION=random
 
