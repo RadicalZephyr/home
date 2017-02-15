@@ -5,7 +5,7 @@
 
 (set-env! :dependencies '[[boot-deps "0.1.6" :exclusions [org.clojure/clojure]]
                           [radicalzephyr/bootlaces     "0.1.15-SNAPSHOT" :scope "test"]
-                          [org.clojure/tools.trace "0.7.9" :exclusions [org.clojure/clojure]]
+                          [org.clojure/tools.trace "0.7.9" :scope "test" :exclusions [org.clojure/clojure]]
                           [samestep/boot-refresh "0.1.0" :scope "test" :exclusions [org.clojure/clojure]]])
 
 (require '[radicalzephyr.bootlaces :refer :all]
