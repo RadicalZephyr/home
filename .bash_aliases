@@ -17,3 +17,5 @@ alias emacs='emacsclient -n'
 alias be='bundle exec'
 
 alias pretty-path='echo $PATH | tr : "\n"'
+
+alias serve='boot -d org.clojure/tools.nrepl:0.2.11 -d pandeiro/boot-http serve -d . wait'
