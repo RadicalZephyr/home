@@ -1,3 +1,4 @@
+echo 'Reading .bash_profile'
 # System-wide .bashrc file for interactive bash(1) shells.
 
 # To enable the settings / commands in this file for login shells as well,
@@ -122,41 +123,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-export EDITOR='zile'
-export VISUAL='zile'
-export MAVEN_OPTS='-Xmx2048m'
-export PIP_REQUIRE_VIRTUALENV=true
-export SCALA_HOME=$HOME/local/scala-2.11.1
-export HERMIT_ROOT=~/prog/bash/hermit
-export GH_USERNAME="RadicalZephyr"
-export CLOJARS_USERNAME="earthlingzephyr"
-export BOOT_EMIT_TARGET=no
-export ANSIBLE_COW_SELECTION=random
-
-source ~/.bashrc.secrets
-
-# Add lots of stuff to my PATH
-
-PATH="$PATH:$JAVA_HOME/bin"
-PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
-PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
-PATH="$PATH:$SCALA_HOME/bin"
-
-PATH="/usr/local/bin:$PATH"
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$HOME/.pyenv/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-
-export PATH
-
-# If homebrew is available put coreutils directly on front of PATH
-if which brew >/dev/null 2>&1
-then
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    source ~/.bash_aliases
 fi
 
 if which keychain >/dev/null 2>&1
