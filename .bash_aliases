@@ -11,7 +11,7 @@ alias mv='mv -v'
 alias diff='diff -u'
 
 # Make emacs more functional
-alias emacs='emacsclient -n'
+alias emacsc='emacsclient -n'
 
 # Shorten working with bundler
 alias be='bundle exec'
