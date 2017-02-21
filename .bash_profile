@@ -32,10 +32,10 @@ PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH
-
 # If homebrew is available put coreutils directly on front of PATH
 if which brew >/dev/null 2>&1
 then
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
+
+export PATH
