@@ -26,6 +26,7 @@ PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
 PATH="$PATH:$SCALA_HOME/bin"
 
 PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
