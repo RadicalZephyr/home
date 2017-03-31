@@ -125,6 +125,10 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_secrets ]; then
+    source ~/.bash_secrets
+fi
+
 if which keychain >/dev/null 2>&1
 then
     keychain 'id_rsa'
