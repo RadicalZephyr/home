@@ -3,6 +3,10 @@ alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# some exa aliases
+alias el='exa -al'
+alias eg='exa -alh --git'
+
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
