@@ -25,3 +25,8 @@ alias pretty-path='echo $PATH | tr : "\n"'
 alias serve='boot -d org.clojure/tools.nrepl:0.2.11 -d pandeiro/boot-http serve -d . wait'
 
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222 --no-first-run --user-data-dir=.test-dirac-chrome-profile'
+
+apt-provides() {
+  apt-cache show $(apt-cache search "$1" | awk '{ print $1 }' | tr '\n' ' ') |
+    sed -n '/^Package: \(.*\)$/ {s//\1/;h}; /^Provides:.*'"$1"'/ {x;p}'
+}
