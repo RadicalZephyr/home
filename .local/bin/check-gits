@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Finds all git repositories underneath all of the passed
+# directories. It then prints out a status indicator and the full path
+# to any git directory that seems like it might not be fully checked
+# in, or synced to a remote repo.
+#  - EMPTY: there is no commit checked out (usually means there are no commits yet)
+#  - MODIFIED: there are tracked files that have been modified but not uncommitted
+#  - UNTRACKED: there are untracked files that are not ignored
+#  - NO-REMOTE: there are no remotes associated with this repository
+
+set -e
+
+echo-exit() {
+    echo "$1" $PWD
+    exit 0
+}
+
+untracked-files() {
+    git status --porcelain | grep -F '??' >/dev/null 2>&1
+}
+
+find "$@" -type d -name .git -print0 |
+    while IFS= read -r -d $'\0' dir
+    do
+        pushd ${dir%/.git} >/dev/null 2>&1
+
+        # Is a commit checked out?
+        git rev-parse HEAD > /dev/null 2>&1 || echo-exit EMPTY
+        # Any uncommitted changes?
+        git diff-index --quiet HEAD -- || echo-exit MODIFIED
+        # Any non-ignored untracked files?
+        untracked-files && echo-exit UNTRACKED
+        # Any remotes?
+        [[ "0" = $(git remote | wc -l) ]] && echo-exit NO-REMOTE
+
+        popd >/dev/null 2>&1
+    done
