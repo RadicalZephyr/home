@@ -1,3 +1,5 @@
+# -*- mode: Shell-script -*-
+
 # some more ls aliases
 alias ll='ls -alhF'
 alias la='ls -A'
@@ -13,9 +15,6 @@ alias mv='mv -v'
 
 # Make diff work better
 alias diff='diff -u'
-
-# Make emacs more functional
-alias emacsc='emacsclient -n'
 
 # Shorten working with bundler
 alias be='bundle exec'
