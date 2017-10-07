@@ -29,3 +29,7 @@ apt-provides() {
   apt-cache show $(apt-cache search "$1" | awk '{ print $1 }' | tr '\n' ' ') |
     sed -n '/^Package: \(.*\)$/ {s//\1/;h}; /^Provides:.*'"$1"'/ {x;p}'
 }
+
+really-which() {
+  ls -lah $(which $1)
+}
