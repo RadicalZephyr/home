@@ -35,3 +35,6 @@
   cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [credential]
 	helper = cache --timeout=3600
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
