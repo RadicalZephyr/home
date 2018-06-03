@@ -118,8 +118,8 @@ fi
 
 
 # Init all the environment variables
-export EDITOR='zile'
-export VISUAL='zile'
+export EDITOR='emacsclient -a ""'
+export VISUAL=$EDITOR
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
 export SCALA_HOME=$HOME/.local/scala-2.11.1
