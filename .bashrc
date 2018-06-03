@@ -134,26 +134,28 @@ if [ -f ~/.bashrc.secrets ]; then
     source ~/.bashrc.secrets
 fi
 
-# Add lots of stuff to my PATH
-PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
-PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
-PATH="$PATH:$SCALA_HOME/bin"
+# Only add stuff to PATH once
+if ! [[ $PATH = *.cargo/bin* ]]; then
+    # Add lots of stuff to my PATH
+    PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
+    PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
+    PATH="$PATH:$SCALA_HOME/bin"
 
-PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$HOME/.pyenv/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
+    PATH="/usr/local/bin:$PATH"
+    PATH="/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
+    PATH="$HOME/.rbenv/bin:$PATH"
+    PATH="$HOME/.pyenv/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.cargo/bin:$PATH"
 
-# If homebrew is available put coreutils directly on front of PATH
-if which brew >/dev/null 2>&1
-then
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    # If homebrew is available put coreutils directly on front of PATH
+    if which brew >/dev/null 2>&1
+    then
+        PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    fi
+
+    export PATH
 fi
-
-export PATH
-
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
