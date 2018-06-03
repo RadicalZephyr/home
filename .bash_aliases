@@ -49,3 +49,6 @@ test-truecolor() {
       printf "\n";
   }'
 }
+
+alias v='nvim'
+alias vimc='nvim ~/.config/nvim/init.vim'
