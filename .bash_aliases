@@ -64,3 +64,7 @@ backup() {
 restore() {
     mv $1 ${1%.bak}
 }
+
+take() {
+    mkdir -p $1 && cd $1
+}
