@@ -25,6 +25,9 @@ alias serve='boot -d org.clojure/tools.nrepl:0.2.11 -d pandeiro/boot-http serve 
 
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222 --no-first-run --user-data-dir=.test-dirac-chrome-profile'
 
+alias v='nvim'
+alias vimc='nvim ~/.config/nvim/init.vim'
+
 apt-provides() {
   apt-cache show $(apt-cache search "$1" | awk '{ print $1 }' | tr '\n' ' ') |
     sed -n '/^Package: \(.*\)$/ {s//\1/;h}; /^Provides:.*'"$1"'/ {x;p}'
@@ -50,5 +53,14 @@ test-truecolor() {
   }'
 }
 
-alias v='nvim'
-alias vimc='nvim ~/.config/nvim/init.vim'
+archive() {
+    mv $1{,.bak}
+}
+
+backup() {
+    cp $1{,.bak}
+}
+
+restore() {
+    mv $1 ${1%.bak}
+}
