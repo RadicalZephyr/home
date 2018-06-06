@@ -9,6 +9,11 @@ alias l='ls -CF'
 alias el='exa -al'
 alias eg='exa -alh --git'
 
+# If exa is installed and works, then replace ls with exa
+if which exa >/dev/null 2>&1 && exa . >/dev/null ; then
+    alias ls='exa'
+fi
+
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
