@@ -73,3 +73,13 @@ restore() {
 take() {
     mkdir -p $1 && cd $1
 }
+
+ps1_add_newline() {
+    local prefix="$(echo $PS1 | cut -d ' ' -f -2)"
+    local suffix="$(echo $PS1 | cut -d ' ' -f -2 --complement)"
+    PS1="${prefix}"$'\n'"${suffix} "
+}
+
+ps1_remove_newline() {
+    PS1="$(echo $PS1 | tr $'\n' ' ')"
+}
