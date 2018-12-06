@@ -126,6 +126,7 @@ export SCALA_HOME=$HOME/.local/scala-2.11.1
 export GH_USERNAME="RadicalZephyr"
 export CLOJARS_USERNAME="earthlingzephyr"
 export BOOT_EMIT_TARGET=no
+export BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xmx2g -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xverify:none"
 export ANSIBLE_COW_SELECTION=random
 export MINICOM='-con'
 
