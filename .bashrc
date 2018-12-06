@@ -194,3 +194,8 @@ if [ -f ~/.local/bin/virtualenvwrapper.sh ]
 then
     source ~/.local/bin/virtualenvwrapper.sh
 fi
+
+if [ -f ~/.travis/travis.sh ]
+then
+    source ~/.travis/travis.sh
+fi

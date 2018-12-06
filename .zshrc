@@ -124,3 +124,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# added by travis gem
+[ -f /home/geoff/.travis/travis.sh ] && source /home/geoff/.travis/travis.sh
