@@ -123,6 +123,7 @@ export VISUAL=$EDITOR
 export MAVEN_OPTS='-Xmx2048m'
 export PIP_REQUIRE_VIRTUALENV=true
 export SCALA_HOME=$HOME/.local/scala-2.11.1
+export NVM_DIR="$HOME/.nvm"
 export GH_USERNAME="RadicalZephyr"
 export CLOJARS_USERNAME="earthlingzephyr"
 export BOOT_EMIT_TARGET=no
@@ -199,4 +200,14 @@ fi
 if [ -f ~/.travis/travis.sh ]
 then
     source ~/.travis/travis.sh
+fi
+
+if [ -s "$NVM_DIR/nvm.sh" ]
+then
+   source "$NVM_DIR/nvm.sh"
+fi
+
+if [ -s "$NVM_DIR/bash_completion" ]
+then
+    source "$NVM_DIR/bash_completion"
 fi
