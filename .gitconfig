@@ -15,8 +15,10 @@
   last-diff = diff HEAD~ HEAD
   pack = !git archive -o $(git tag | sort -rVk1.2 | head -n1).zip HEAD
   ignore = !echo >> .gitignore
-	gh-init = !github-init
-	gh-cl = !echo git clone git@github.com:${1}.git $2
+  gh-init = !github-init
+  gh-cl = !echo git clone git@github.com:${1}.git $2
+  web = !"f() {\nif [ -z $1 ];\nthen remote='origin';\nelse remote=$1;\nfi\ngit-open-web $(git remote get-url $remote)\n}\nf"
+
 [giggle]
   main-window-maximized = false
   main-window-geometry = 1029x675+3+49
