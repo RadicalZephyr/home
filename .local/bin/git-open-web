@@ -15,7 +15,7 @@ function to_https() {
 if which xdg-open  > /dev/null 2>&1
 then
     xdg-open "$(to_https $remote)"
-elif which xdg-open  > /dev/null 2>&1
+elif which open  > /dev/null 2>&1
 then
      open "$(to_https $remote)"
 else
