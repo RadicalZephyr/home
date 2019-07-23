@@ -74,6 +74,10 @@ take() {
     mkdir -p $1 && cd $1
 }
 
+check-tar-size() {
+    tar tvf $1 | awk '{ s += $3 } END { print s }' | numfmt -d , --to=iec --suffix=B
+}
+
 ps1_add_newline() {
     local prefix="$(echo $PS1 | cut -d ' ' -f -2)"
     local suffix="$(echo $PS1 | cut -d ' ' -f -2 --complement)"
