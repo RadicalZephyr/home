@@ -87,3 +87,47 @@ ps1_add_newline() {
 ps1_remove_newline() {
     PS1="$(echo $PS1 | tr $'\n' ' ')"
 }
+
+runserver() {
+    local destination="$1"
+    local port="$2"
+    local path="$3"
+
+    # Check if a server is already running on the desired port
+    if ! nc -d -w 1 $destination $port
+    then
+        basic-http-server -x -a ${destination}:${port} $path &
+        # Wait until the destination is accepting connections
+        while ! nc -d -w 1 $destination $port ; do sleep 0.1s ; done
+    fi
+}
+
+cratedocs() {
+    local destination="127.0.0.1"
+    local port="$(( ( 16#$( echo $PWD | sha1sum | cut -c 1-5 ) % (65535 - 1000) ) + 1000 ))"
+
+    local path="target/doc/"
+
+    coproc cargo doc --all --all-features
+    wait $COPROC_PID
+
+    runserver $destination $port $path
+
+    xdg-open http://${destination}:${port}
+
+    echo
+}
+
+rustdocs() {
+    local destination="127.0.0.1"
+    local port="19324"
+
+    local toolchain=$(rustup show active-toolchain | cut -d' ' -f 1)
+    local path="$HOME/.rustup/toolchains/${toolchain}/share/doc/"
+
+    runserver $destination $port $path
+
+    xdg-open http://${destination}:${port}/rust/html/index.html
+
+    echo
+}
