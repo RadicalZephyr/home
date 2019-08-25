@@ -26,7 +26,7 @@ alias be='bundle exec'
 
 alias pretty-path='echo $PATH | tr : "\n"'
 
-alias serve='boot -d org.clojure/tools.nrepl:0.2.11 -d pandeiro/boot-http serve -d . wait'
+alias serve='basic-http-server -x'
 
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222 --no-first-run --user-data-dir=.test-dirac-chrome-profile'
 
