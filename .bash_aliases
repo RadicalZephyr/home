@@ -104,7 +104,10 @@ runserver() {
 
 cratedocs() {
     local destination="127.0.0.1"
-    local port="$(( ( 16#$( echo $PWD | sha1sum | cut -c 1-5 ) % (65535 - 1000) ) + 1000 ))"
+    # Calculate a hash of the current directory and use that as the
+    # port number. This way we can still launch multiple servers, but
+    # launching a server from the same directory multiple times won't happen.
+    local port="$(( ( 16#$( echo $PWD | sha1sum | cut -c 1-5 ) % (65535 - 1024) ) + 1024 ))"
 
     local path="target/doc/"
 
