@@ -134,3 +134,16 @@ rustdocs() {
 
     echo
 }
+
+watch() {
+    local sleep_time="$1"
+    shift 1
+    local watch_cmd="$@"
+
+    while true
+    do
+        clear
+        $watch_cmd
+        sleep $sleep_time
+    done
+}
