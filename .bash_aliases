@@ -110,13 +110,15 @@ cratedocs() {
     local port="$(( ( 16#$( echo $PWD | sha1sum | cut -c 1-5 ) % (65535 - 1024) ) + 1024 ))"
 
     local path="target/doc/"
+    local alias="$(basename $PWD).docs"
 
     coproc cargo doc --all --all-features
     wait $COPROC_PID
 
     runserver $destination $port $path
+    local-domain-alias $port $alias
 
-    xdg-open http://${destination}:${port}
+    xdg-open http://${alias}/
 
     echo
 }
@@ -126,11 +128,13 @@ rustdocs() {
     local port="19324"
 
     local toolchain=$(rustup show active-toolchain | cut -d' ' -f 1)
-    local path="$HOME/.rustup/toolchains/${toolchain}/share/doc/"
+    local path="$HOME/.rustup/toolchains/${toolchain}/share/doc/rust/html"
+    local alias="rust.docs"
 
     runserver $destination $port $path
+    local-domain-alias $port $alias
 
-    xdg-open http://${destination}:${port}/rust/html/index.html
+    xdg-open http://${alias}/
 
     echo
 }
