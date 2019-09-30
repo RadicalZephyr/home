@@ -112,11 +112,13 @@ cratedocs() {
     local path="target/doc/"
     local alias="$(basename $PWD).docs"
 
-    coproc cargo doc --all --all-features
-    wait $COPROC_PID
+    cargo doc --all --all-features &
+    local pid=$!
 
     runserver $destination $port $path
     local-domain-alias $port $alias
+
+    wait $pid
 
     xdg-open http://${alias}/
 
