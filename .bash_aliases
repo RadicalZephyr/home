@@ -17,6 +17,7 @@ fi
 # Make commands more verbose
 alias cp='cp -v'
 alias mv='mv -v'
+alias dd='dd status=progress'
 
 # Make diff work better
 alias diff='diff -u'
