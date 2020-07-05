@@ -4,7 +4,7 @@
 	signingkey = 9F73ECFA
 [core]
   autocrlf = input
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [color]
   ui = auto
 [alias]
