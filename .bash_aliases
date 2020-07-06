@@ -19,7 +19,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias dd='dd status=progress'
 
-alias copy-last-command='history 2 | head -n1 | cut -d" " -f 4- | xclip -i'
+alias copy-last-command="fc -nl -2 | head -n1 | sed 's/^[ \t]*//' | xclip -i"
 
 # Make diff work better
 alias diff='diff -u'
