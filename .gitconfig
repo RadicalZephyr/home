@@ -1,7 +1,6 @@
 [user]
-  name = Geoff Shannon
-  email = geoffpshannon@gmail.com
-	signingkey = 9F73ECFA
+  name = Zephyr Shannon
+  email = earthlingzephyr@gmail.com
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
