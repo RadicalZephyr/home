@@ -156,3 +156,18 @@ watch() {
         sleep $sleep_time
     done
 }
+
+send_files() {
+    if [[ $# -ge 1 ]]
+    then
+        echo "Must be called with at least one argument."
+        echo "Usage: send_files SCP_REMOTE_HOST_PATH [LOCAL_FILES*]"
+        return 1
+    fi
+
+    local ssh_target="${1%%:*}"
+    local remote_folder="${1#*:}"
+    shift 1
+    tar czf - "$@" | ssh "$ssh_target" 'tar xzf - -C $remote_folder '
+
+}
