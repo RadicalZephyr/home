@@ -171,3 +171,12 @@ send_files() {
     tar czf - "$@" | ssh "$ssh_target" 'tar xzf - -C $remote_folder '
 
 }
+
+status() {
+    if [[  $? -eq 0 ]]
+    then
+        echo "Great Success!"
+    else
+        echo "Tragic Failure!"
+    fi
+}
