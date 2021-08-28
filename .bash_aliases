@@ -36,6 +36,8 @@ alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Ch
 alias v='nvim'
 alias vimc='nvim ~/.config/nvim/init.vim'
 
+alias global-pip='PIP_REQUIRE_VIRTUALENV=0 pip'
+
 apt-provides() {
   apt-cache show $(apt-cache search "$1" | awk '{ print $1 }' | tr '\n' ' ') |
     sed -n '/^Package: \(.*\)$/ {s//\1/;h}; /^Provides:.*'"$1"'/ {x;p}'
