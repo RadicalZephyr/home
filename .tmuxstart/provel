@@ -1,4 +1,5 @@
 cd "$HOME/work/provel/printer/"
+
 new_session -n control
 send_keys 1 "cd control" "Enter"
 send_keys 1 "clear" "Enter"
@@ -7,3 +8,7 @@ new_window -n klipper
 send_keys 2 "cd klipper" "Enter"
 send_keys 2 "pyenv activate klipper" "Enter"
 send_keys 2 "clear" "Enter"
+
+new_window -n trajectory-planning
+send_keys 3 "cd trajectory-planning" "Enter"
+send_keys 3 "clear" "Enter"
