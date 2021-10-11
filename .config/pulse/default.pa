@@ -1,0 +1,2 @@
+set-default-source alsa_input.usb-20102019_Thronmax_MDrill_Zero-00.analog-stereo
+set-default-sink alsa_output.pci-0000_0d_00.3.analog-stereo
