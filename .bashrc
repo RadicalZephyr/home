@@ -127,7 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 export GH_USERNAME="RadicalZephyr"
 export CLOJARS_USERNAME="earthlingzephyr"
 export BOOT_EMIT_TARGET=no
-export BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xmx2g -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xverify:none"
+export BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xmx2g -XX:+CMSClassUnloadingEnabled -Xverify:none"
 export ANSIBLE_COW_SELECTION=random
 export MINICOM='-con'
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
