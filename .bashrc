@@ -132,6 +132,7 @@ export ANSIBLE_COW_SELECTION=random
 export MINICOM='-con'
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_HOME="$HOME/.pyenv"
 
 if [ -f ~/.bashrc.secrets ]; then
     source ~/.bashrc.secrets
@@ -196,6 +197,7 @@ fi
 
 if [ -f ~/.local/bin/virtualenvwrapper.sh ]
 then
+    export WORKON_HOME="$HOME/.virtualenvs"
     source ~/.local/bin/virtualenvwrapper.sh
 fi
 
