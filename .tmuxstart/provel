@@ -9,6 +9,6 @@ send_keys 2 "cd klipper" "Enter"
 send_keys 2 "pyenv activate klipper" "Enter"
 send_keys 2 "clear" "Enter"
 
-new_window -n trajectory-planning
-send_keys 3 "cd trajectory-planning" "Enter"
+new_window -n infrastructure
+send_keys 3 "cd infrastructure" "Enter"
 send_keys 3 "clear" "Enter"
