@@ -1,0 +1,9 @@
+cd "$HOME/prog/js"
+
+new_session -n scripts
+send_keys 1 "cd bitburner-scripts" "Enter"
+send_keys 1 "clear" "Enter"
+
+new_window -n bitburner
+send_keys 2 "cd bitburner" "Enter"
+send_keys 2 "clear" "Enter"
