@@ -1,0 +1,21 @@
+cd "$HOME/prog/projectm"
+
+new_session -n lib
+send_keys 1 "cd lib" "Enter"
+send_keys 1 "clear" "Enter"
+
+new_window -n src
+send_keys 2 "cd lib/src" "Enter"
+send_keys 2 "clear" "Enter"
+
+new_window -n build
+send_keys 3 "cd lib/build" "Enter"
+send_keys 3 "clear" "Enter"
+
+new_window -n sdl-ui
+send_keys 4 "cd frontend-sdl2"
+send_keys 4 "clear" "Enter"
+
+new_window -n sdl-ui-build
+send_keys 4 "cd frontend-sdl2/build"
+send_keys 4 "clear" "Enter"
