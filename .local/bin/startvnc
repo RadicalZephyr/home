@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec x11vnc -repeat -allinput -pointer_mode 2 -multiptr -scale 0.75 -ncache -display :1 -rfbauth ~/.vnc/passwd
+exec x11vnc -repeat -allinput -pointer_mode 2 -multiptr -scale 1.0 -ncache -display :1 -rfbauth ~/.vnc/passwd
