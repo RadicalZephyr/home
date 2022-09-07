@@ -41,3 +41,5 @@
 	autosetuprebase = always
 [init]
 	defaultBranch = main
+[mailmap]
+	file = /home/zefs/.home/.mailmap
