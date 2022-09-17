@@ -36,6 +36,17 @@ alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Ch
 alias v='nvim'
 alias vimc='nvim ~/.config/nvim/init.vim'
 
+if which flatpak >/dev/null 2>&1
+then
+    ZOLA_PAK_NAME=org.getzola.zola
+    # if the ZOLA flatpak is NOT installed
+    if flatpack info $ZOLA_PAK_NAME >/dev/null 2>&1 && false
+    then
+        flatpak install flathub $ZOLA_PAK_NAME
+    fi
+    alias zola="flatpak run $ZOLA_PAK_NAME"
+fi
+
 alias global-pip='PIP_REQUIRE_VIRTUALENV=0 pip'
 
 alias githooks-link="test -d .git -a -d .git-hooks && ( cd .git/hooks ; ln -si -t . $(echo ../../.git-hooks/*) ; cd - )"
