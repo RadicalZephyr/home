@@ -195,3 +195,16 @@ status() {
         echo "Tragic Failure!"
     fi
 }
+
+if which ansible-playbook notify-send >/dev/null 2>&1
+then
+    ANSIBLE_PLAYBOOK_PATH="$(which ansible-playbook)"
+    ansible-playbook() {
+         if $ANSIBLE_PLAYBOOK_PATH "$@"
+         then
+             notify-send "Ansible Succeeded!"
+         else
+             notify-send "Ansible Failed!"
+         fi
+    }
+fi
