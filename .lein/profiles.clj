@@ -12,5 +12,4 @@
                                     :refer :all])
                          (set! *print-length* 100))
                  :nrepl-middleware
-                 [com.gfredericks.debug-repl/wrap-debug-repl]}
-  :repositories {"clojars" {:creds :gpg}}}}
+                 [com.gfredericks.debug-repl/wrap-debug-repl]}}}
