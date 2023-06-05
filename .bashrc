@@ -145,11 +145,15 @@ PATH="$PATH:$SCALA_HOME/bin"
 
 PATH="/$HOME/go/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
+
+# local texlive installation setup
+PATH="/home/zefs/.local/texlive/2023/bin/x86_64-linux:$PATH"
+export MANPATH="/home/zefs/.local/texlive/2023/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/home/zefs/.local/texlive/2023/texmf-dist/doc/info:$INFOPATH"
 
 # If homebrew is available put coreutils directly on front of PATH
 if which brew >/dev/null 2>&1
