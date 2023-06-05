@@ -49,7 +49,7 @@ fi
 
 alias global-pip='PIP_REQUIRE_VIRTUALENV=0 pip'
 
-alias githooks-link="test -d .git -a -d .git-hooks && ( cd .git/hooks ; ln -si -t . $(echo ../../.git-hooks/*) ; cd - )"
+alias githooks-link="test -d .git -a -d .git-hooks && ( cd .git/hooks ; ln -si -t . ../../.git-hooks/* ; cd - )"
 
 apt-provides() {
   apt-cache show $(apt-cache search "$1" | awk '{ print $1 }' | tr '\n' ' ') |
