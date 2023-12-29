@@ -143,7 +143,7 @@ PATH="$PATH:$HOME/.local/android-sdk-linux/tools"
 PATH="$PATH:$HOME/.local/android-sdk-linux/platform-tools"
 PATH="$PATH:$SCALA_HOME/bin"
 
-PATH="/$HOME/go/bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
