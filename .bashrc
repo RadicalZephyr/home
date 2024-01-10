@@ -219,3 +219,8 @@ if [ -s "$NVM_DIR/bash_completion" ]
 then
     source "$NVM_DIR/bash_completion"
 fi
+
+if which cargo-shuttle > /dev/null 2>&1
+then
+    eval "$(cargo shuttle generate shell bash)"
+fi
