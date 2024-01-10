@@ -149,6 +149,7 @@ PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.turso:$PATH"
 
 # local texlive installation setup
 PATH="/home/zefs/.local/texlive/2023/bin/x86_64-linux:$PATH"
