@@ -45,6 +45,7 @@ then
         flatpak install flathub $ZOLA_PAK_NAME
     fi
     alias zola="flatpak run $ZOLA_PAK_NAME"
+    alias pixelorama="flatpak run com.orama_interactive.Pixelorama"
 fi
 
 alias global-pip='PIP_REQUIRE_VIRTUALENV=0 pip'
