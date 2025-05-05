@@ -46,6 +46,7 @@ then
     fi
     alias zola="flatpak run $ZOLA_PAK_NAME"
     alias pixelorama="flatpak run com.orama_interactive.Pixelorama"
+    alias libresprite="flatpak run com.github.libresprite.LibreSprite"
 fi
 
 alias global-pip='PIP_REQUIRE_VIRTUALENV=0 pip'
