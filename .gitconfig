@@ -1,6 +1,6 @@
 [user]
   name = Zefira Shannon
-  email = earthlingzephyr@gmail.com
+  email = zefira@hey.com
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
