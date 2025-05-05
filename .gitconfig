@@ -43,3 +43,15 @@
 	defaultBranch = main
 [mailmap]
 	file = /home/zefs/.home/.mailmap
+
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHO3+LPDOj9ehhcl3OKDpzKBIVwsb7TdMmEDQpYngQCR
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+  gpgsign = true
