@@ -225,3 +225,9 @@ if which cargo-shuttle > /dev/null 2>&1
 then
     eval "$(cargo shuttle generate shell bash)"
 fi
+
+if [ -f ~/.deno/env ]
+   then
+       source ~/.deno/env
+       source ~/.local/share/bash-completion/completions/deno.bash
+fi
