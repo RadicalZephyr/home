@@ -231,4 +231,8 @@ then
     source ~/.deno/env
     source ~/.local/share/bash-completion/completions/deno.bash
 fi
+
+if [ -f ~/.local/bin/mise ]
+then
+    eval "$(/home/zefs/.local/bin/mise activate bash)"
 fi
