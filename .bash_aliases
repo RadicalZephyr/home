@@ -198,6 +198,26 @@ status() {
     fi
 }
 
+markdownify() {
+    if ! command -v pandoc > /dev/null 2>&1
+    then
+        echo "Pandoc must be installed to markdownify an epub"
+        return 1
+    fi
+
+    local ROOT="${1%/}"
+    local OUTDIR="${2:-.}"
+    local OUTDIR="${OUTDIR%/}"
+
+    for file in "${ROOT}/kindle_split_"*.html
+    do
+        local basefile="${file%.html}"
+        local number="${basefile#${ROOT}/kindle_split_}"
+        local outfile="section_${number}.md"
+        pandoc $file -f html -t markdown -o "${OUTDIR}/$outfile"
+    done
+}
+
 if which ansible-playbook notify-send >/dev/null 2>&1
 then
     ANSIBLE_PLAYBOOK_PATH="$(which ansible-playbook)"
