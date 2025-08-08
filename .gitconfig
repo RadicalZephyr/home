@@ -55,3 +55,7 @@
 
 [commit]
   gpgsign = true
+[github]
+	user = RadicalZephyr
+[gitlab]
+	user = earthlingzephyr
