@@ -5,13 +5,13 @@ alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# some exa aliases
-alias el='exa -al'
-alias eg='exa -alh --git'
+# some eza aliases
+alias el='eza -al'
+alias eg='eza -alh --git'
 
-# If exa is installed and works, then replace ls with exa
-if which exa >/dev/null 2>&1 && exa . >/dev/null ; then
-    alias ls='exa'
+# If eza is installed and works, then replace ls with eza
+if which eza >/dev/null 2>&1 && eza . >/dev/null ; then
+    alias ls='eza'
 fi
 
 # Make commands more verbose
