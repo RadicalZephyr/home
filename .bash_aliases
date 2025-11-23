@@ -230,3 +230,16 @@ then
          fi
     }
 fi
+
+gh-clear-notifications() {
+    echo "Checking gh auth status"
+    if gh auth status
+    then
+        for id in $(gh api 'notifications?unread=true' --jq 'map(select(.unread) | .id)[]')
+        do
+            echo "Clearing notification ${id}"
+            gh api --method DELETE -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' notifications/threads/"${id}"
+        done
+        echo "Finished clearing all notifications!"
+    fi
+}
