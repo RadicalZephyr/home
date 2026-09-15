@@ -1,7 +1,7 @@
 # -*- mode: Shell-script -*-
 
 # some more ls aliases
-alias ll='ls -alhF'
+alias ll='ls -alhF auto'
 alias la='ls -A'
 alias l='ls -CF'
 
