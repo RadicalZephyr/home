@@ -1,7 +1,7 @@
 # Layering on Bazzite: what it costs, and why it has a shelf life
 
 - **Status:** Notes, Sept 2026
-- **Relates to:** ADR-001 §"Custom derived image: not now", §"The layering decision has a
+- **Relates to:** [ADR-0001](decisions/0001-desktop-linux-distro.md) §"Custom derived image: not now", §"The layering decision has a
   shelf life"
 
 ---

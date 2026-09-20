@@ -19,8 +19,10 @@ customizations, so treat the README as lagging the scope, and widen it when touc
 - `distrobox.ini` — `distrobox assemble` file for all containers. Each section's header
   comment carries a `VERIFIED ... <date>` stamp and the reasoning behind every package.
 - `claude-desktop-init.sh` — the one init hook for the `claude-desktop` box.
-- `docs/` — notes on the host strategy. `layering-shelf-life.md` cites ADR-001, which
-  lives outside this repo.
+- `docs/` — notes on the host strategy: the `bazzite-0N-*.md` model/exercises/reference
+  trio, `layering-shelf-life.md`, and per-task handoffs.
+- `docs/decisions/` — ADRs. `0001-desktop-linux-distro.md` is the distro decision and
+  holds the layering cap and the derived-image triggers.
 
 ## Commands
 

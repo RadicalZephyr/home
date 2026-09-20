@@ -63,7 +63,7 @@ A successful test proves the package runs. It does **not** produce a working ins
 | Symlink workaround | Reported | Symlinking brew's helper to `/opt/1Password/1Password-BrowserSupport` — community fix, source below |
 | Put it in a derived image | Deferred | The "proper" version of layering; see `layering-shelf-life.md` |
 
-Relevant constraint from ADR-001: the layered package list is capped at 3–4, currently **one** (`emacs-pgtk`). 1Password would be the second. Reaching 3–4 is one of the documented triggers for building a derived image instead.
+Relevant constraint from [ADR-0001](decisions/0001-desktop-linux-distro.md): the layered package list is capped at 3–4, currently **one** (`emacs-pgtk`). 1Password would be the second. Reaching 3–4 is one of the documented triggers for building a derived image instead.
 
 Primary source found during setup: <https://universal-blue.discourse.group/t/1password-with-browser-integration/10880> (~Oct 2025). No clean solution existed at that time — re-check, it may have moved.
 
@@ -92,14 +92,14 @@ Call these with the Skill tool:
 
 - **`anthropic-skills:i-have-adhd`** — active throughout the prior session and should be re-invoked. Lead with the next action, number multi-step work, restate state each turn, give concrete time estimates
 - **`anthropic-skills:grilling`** — this decision has real trade-offs (lockout risk vs. convenience vs. layering budget) and the user explicitly likes having them stress-tested before committing
-- **`engineering:architecture`** — if the outcome changes the layering posture, it belongs in ADR-001 as an update rather than a new document
+- **`engineering:architecture`** — if the outcome changes the layering posture, it belongs in ADR-0001 as an update rather than a new document
 - **`engineering:debug`** — if the usroverlay test fails in a non-obvious way
 
 ## Reference documents
 
 Do not re-derive what these already cover:
 
-- `adr-001-desktop-linux-distro.md` — the distro decision, the layering cap, the derived-image triggers, the bootc shelf life
+- `decisions/0001-desktop-linux-distro.md` — the distro decision, the layering cap, the derived-image triggers, the bootc shelf life
 - `layering-shelf-life.md` — why layering is time-limited, what survives bootc, the "does it lie about the image" rule
 - `bazzite-01-the-model.md` — the six invariants, the escape hatches including `usroverlay`
 - `bazzite-02-first-week.md` — exercise 2 is the `usroverlay` walkthrough; **unrun as of this handoff**
