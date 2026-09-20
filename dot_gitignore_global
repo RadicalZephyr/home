@@ -1,0 +1,79 @@
+# Change mercurial syntax to git style.
+# Git doesn't recognize it, and thus ignores it.
+syntax: glob
+
+# Editor files #
+################
+*~
+\#*\#
+*.bak*
+*.bk*
+.emacs.desktop
+.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+.dir-locals.el
+
+# AucTex
+auto/
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# Compiled source #
+###################
+*.gch
+*.beam
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.ali
+*.elc
+b~*
+*.pyc
+*.aux
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sdf
+
+# Miscellaneous non-text formats #
+##################################
+*.pdf
+*.dvi
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+.Trashes
+.mal-history
+/TAGS

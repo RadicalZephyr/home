@@ -1,0 +1,40 @@
+[user]
+	name = Zefira Shannon
+	email = zefira@hey.com
+[github]
+	user = RadicalZephyr
+[gitlab]
+	user = earthlingzephyr
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+[mailmap]
+	file = ~/.mailmap
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[push]
+	default = simple
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+[apply]
+	ignorewhitespace = change
+[help]
+	format = web
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = ediff
+[mergetool "ediff"]
+	cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+[alias]
+	gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m" -n15
+	au = update-index --assume-unchanged
+	no-au = update-index --no-assume-unchanged
+	last = log -n1
+	last-diff = diff HEAD~ HEAD
+	pack = !git archive -o $(git tag | sort -rVk1.2 | head -n1).zip HEAD
+	ignore = !echo >> .gitignore
+	web = !"f() {\nif [ -z $1 ];\nthen remote='origin';\nelse remote=$1;\nfi\ngit-open-web $(git remote get-url $remote)\n}\nf"
