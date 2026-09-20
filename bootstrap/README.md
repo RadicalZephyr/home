@@ -35,10 +35,14 @@ else.
 X11/Wayland/ALSA/udev headers, Vulkan drivers) conflict with nothing, so everything that
 doesn't fight goes here.
 
-**`bwapi`** — C++ against BWAPI, which means Wine and 32-bit multilib. That genuinely
-pollutes a system, and it's the one case where a second box earns its keep. It's also the
-case that makes Distrobox worth using at all: this box can run a different distribution
-from `dev` if that makes multilib less painful.
+**`bwapi`** — C++ against BWAPI, which means three toolchains that must agree on struct
+layout: native 64-bit Linux, and 64-bit and 32-bit Windows via MinGW cross compilers, plus
+Wine to run what the cross compilers produce. All three have been verified to lay out the
+BWAPI client-protocol structs identically. 32-bit *Linux* is the one that doesn't, and it's
+forbidden in this box — no `.i686` `-devel` packages, ever. "32-bit" here always means the
+win32 cross toolchain. Nothing in that set conflicts with `dev`, strictly; the box earns
+its keep because Wine drags in ~650 packages of desktop weak dependencies that have no
+business anywhere near the Rust box.
 
 Four boxes — one per project — was the original instinct and it's wrong. Because `$HOME`
 is shared, per-project boxes buy no toolchain isolation, and each one is another `dnf
@@ -171,6 +175,7 @@ wrap it, or install it from Homebrew instead. `which -a` plus `ldd` untangles it
 `dev` is verified — its package list was reconstructed from the box's own `dnf history`
 on 2026-09-20 and matches the one manual install made when the box was built.
 
-`bwapi` is still a placeholder in the `.ini`. Its package list came from a setup runbook
-and is known to contain names that don't resolve — the i686 multilib names in particular.
-**Don't test it by destroying the box** — correct the list first, then rebuild.
+`bwapi` is verified — reconstructed from the box's own `dnf history` on 2026-09-20, and the
+running box matches the file: the i686 leftovers from the mistaken multilib install are
+gone and `git` is in. The only `.i686` packages left (`glibc`, `glibc-gconv-extra`,
+`libgcc`) come from distrobox's own default tool set, not from anything declared here.
