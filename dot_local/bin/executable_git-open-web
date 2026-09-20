@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Open a git remote URL in the browser, converting SSH remotes to https.
+
+if [ "$#" -lt 1 ]; then
+    printf 'Usage: %s GIT_REMOTE_URL\n' "$0" >&2
+    exit 1
+fi
+
+# "git@github.com:user/repo.git" -> "https://github.com/user/repo"
+to_https() {
+    printf '%s' "$1" | sed -E 's#^git@([^:]+):#https://\1/#; s#\.git$##'
+}
+
+url="$(to_https "$1")"
+if command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$url"
+elif command -v open >/dev/null 2>&1; then
+    open "$url"
+else
+    printf '%s\n' "$url"
+fi
