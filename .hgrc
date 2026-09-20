@@ -1,8 +1,0 @@
-[ui]
-
-username = Zefira Shannon <earthlingzephyr@gmail.com>
-
-ignore = ~/.gitignore_global
-
-[extensions]
-graphlog =

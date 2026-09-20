@@ -1,3 +1,0 @@
-cd "$HOME/prog/zomboid"
-
-new_session -n zomboid

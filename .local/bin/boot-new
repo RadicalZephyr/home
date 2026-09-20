@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-exec boot -d seancorfield/boot-new new $@
