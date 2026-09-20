@@ -168,6 +168,9 @@ wrap it, or install it from Homebrew instead. `which -a` plus `ldd` untangles it
 
 `claude-desktop` is verified — that section reflects exactly what was built and works.
 
-`dev` and `bwapi` are marked as placeholders in the `.ini`. Their package lists came from
-a setup runbook and are known to contain names that don't resolve. **Don't test them by
-destroying the box** — correct the lists first, then rebuild.
+`dev` is verified — its package list was reconstructed from the box's own `dnf history`
+on 2026-09-20 and matches the one manual install made when the box was built.
+
+`bwapi` is still a placeholder in the `.ini`. Its package list came from a setup runbook
+and is known to contain names that don't resolve — the i686 multilib names in particular.
+**Don't test it by destroying the box** — correct the list first, then rebuild.
