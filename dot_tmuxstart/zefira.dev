@@ -1,0 +1,6 @@
+cd "$HOME/websites/zefira.dev"
+
+new_session -n zefira.dev
+
+new_window -n "zola serve"
+send_keys 2 "zola serve" "Enter"
