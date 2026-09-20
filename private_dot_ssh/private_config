@@ -1,0 +1,18 @@
+Host beaglebone
+     HostName 192.168.7.2
+     User debian
+     ForwardAgent yes
+     ForwardX11 yes
+
+Host pi
+     HostName raspberrypi.local
+     User pi
+
+Host octopi
+     HostName octopi.local
+     User pi
+     ForwardAgent yes
+
+Host *
+     IdentityAgent ~/.1password/agent.sock
+     CheckHostIP yes
