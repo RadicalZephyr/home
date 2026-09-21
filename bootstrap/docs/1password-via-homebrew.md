@@ -101,8 +101,48 @@ Fresh profile in `~/.config/1Password`, so sign in again, then:
 ## Follow-ups, none started
 
 - Git commit signing via `op-ssh-sign`. The binary is on `PATH` already. (Fixed 2026-09-20)
-- Browser integration. Firefox is a Flatpak, and the cask wrote its native-messaging
-  manifest to the host's `~/.mozilla`, which the Flatpak doesn't see. The allowlist
-  already permits `flatpak-session-helper`, so it may only need the manifest copied into
-  `~/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts/`. Untested.
+- Browser integration. Investigated the same evening and declined; see the section
+  below.
 - Watch #5858. When it closes, the `unset` line in the Brewfile header comes out.
+
+## Browser integration: declined, 2026-09-20
+
+Firefox is the Flatpak. Copying the manifest into
+`~/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts/` was the obvious first
+try and it fails for two independent reasons, both checked from inside the sandbox:
+
+- **The wrapper can't reach the host.** The cask's `1PasswordWrapper.sh` runs
+  `flatpak-spawn --host`, which needs the app to be allowed to talk to
+  `org.freedesktop.Flatpak`. Firefox doesn't ship with that, so the call is refused.
+- **The manifest doesn't point at the wrapper anyway.** The cask writes it pointing at the
+  wrapper; seven minutes later the 1Password app rewrote it to point straight at the
+  helper binary under the brew prefix, which the sandbox can't see. The app owns that
+  file and will keep rewriting it.
+
+The sanctioned answer is a portal, and it isn't here yet. The `org.freedesktop.portal.
+WebExtensions` proposal was never accepted into xdg-desktop-portal; this host's portal
+binary doesn't contain it. Its replacement is a separate service,
+`xdg-native-messaging-proxy` on the bus name `org.freedesktop.NativeMessagingProxy`.
+Firefox 157 ships the client behind `widget.use-xdg-desktop-portal.native-messaging-proxy`
+(default 0). Firefox here is 156, and Fedora 44 has no package for the service: no rpm,
+no binary, nothing on the bus.
+
+**What would work today** is `flatpak override --user --talk-name=org.freedesktop.Flatpak
+org.mozilla.firefox` plus repointing the in-sandbox manifest at the wrapper. Two commands.
+
+**Why not.** That permission lets anything inside the Firefox sandbox run arbitrary
+commands on the host as me. Against a hostile page it's equivalent to no sandbox at all.
+The thing it buys is not having to unlock the extension separately from the app, which
+after three months turns out to be a small papercut. A browser sandbox weighs more than
+that. A non-Flatpak Firefox has the same worst case with more parts, so it isn't an
+alternative either.
+
+**Exit condition.** Fedora packages `xdg-native-messaging-proxy` and Firefox is ≥ 157.
+Then: install the service, set the pref to 2, and the host-side manifest the app already
+maintains in `~/.mozilla/native-messaging-hosts/` is exactly what the proxy reads. No
+override, no copying. The two files copied into the Firefox Flatpak's profile are inert
+and can be deleted whenever.
+
+Sources: [Bugzilla 1955255](https://bugzilla.mozilla.org/show_bug.cgi?id=1955255),
+[Firefox native-messaging confinement design](https://firefox-source-docs.mozilla.org/toolkit/components/extensions/webextensions/native-messaging-portal-design.html),
+[xdg-desktop-portal PR 705](https://github.com/flatpak/xdg-desktop-portal/pull/705).
