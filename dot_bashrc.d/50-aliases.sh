@@ -38,7 +38,6 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 if command -v flatpak >/dev/null 2>&1; then
-    alias zola="flatpak run org.getzola.zola"
     alias pixelorama="flatpak run com.orama_interactive.Pixelorama"
     alias libresprite="flatpak run com.github.libresprite.LibreSprite"
 fi
