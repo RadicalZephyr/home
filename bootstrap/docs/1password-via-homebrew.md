@@ -133,7 +133,7 @@ org.mozilla.firefox` plus repointing the in-sandbox manifest at the wrapper. Two
 **Why not.** That permission lets anything inside the Firefox sandbox run arbitrary
 commands on the host as me. Against a hostile page it's equivalent to no sandbox at all.
 The thing it buys is not having to unlock the extension separately from the app, which
-after three months turns out to be a small papercut. A browser sandbox weighs more than
+I'd flagged at setup as a papercut to revisit if it got annoying. It hasn't. A browser sandbox weighs more than
 that. A non-Flatpak Firefox has the same worst case with more parts, so it isn't an
 alternative either.
 
