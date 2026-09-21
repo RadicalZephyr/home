@@ -32,7 +32,7 @@ echo "deb [arch=amd64,arm64 signed-by=${KEYRING}] ${REPO} stable main" \
     > /etc/apt/sources.list.d/claude-desktop.list
 
 apt-get update
-apt-get install -y claude-desktop
+apt-get install -y claude-desktop git
 
 # qemu-system-x86, ovmf and virtiofsd arrive as recommends — Cowork's local
 # KVM workspace VM needs them. Confirm after a rebuild:
