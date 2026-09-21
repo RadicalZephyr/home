@@ -100,7 +100,7 @@ Fresh profile in `~/.config/1Password`, so sign in again, then:
 
 ## Follow-ups, none started
 
-- Git commit signing via `op-ssh-sign`. The binary is on `PATH` already.
+- Git commit signing via `op-ssh-sign`. The binary is on `PATH` already. (Fixed 2026-09-20)
 - Browser integration. Firefox is a Flatpak, and the cask wrote its native-messaging
   manifest to the host's `~/.mozilla`, which the Flatpak doesn't see. The allowlist
   already permits `flatpak-session-helper`, so it may only need the manifest copied into
