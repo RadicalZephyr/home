@@ -19,6 +19,10 @@ customizations, so treat the README as lagging the scope, and widen it when touc
 - `distrobox.ini` — `distrobox assemble` file for all containers. Each section's header
   comment carries a `VERIFIED ... <date>` stamp and the reasoning behind every package.
 - `claude-desktop-init.sh` — the one init hook for the `claude-desktop` box.
+- `Brewfile` — everything Homebrew manages, including the 1Password casks. Its header
+  carries the `unset SUDO_ASKPASS` rule that privileged cask steps need on Bazzite.
+- `etc/` — hand-written `/etc` files mirrored at their real paths. Files a package or
+  cask generates are not mirrored; their source is the ini or the Brewfile.
 - `docs/` — notes on the host strategy: the `bazzite-0N-*.md` model/exercises/reference
   trio, `layering-shelf-life.md`, and per-task handoffs.
 - `docs/decisions/` — ADRs. `0001-desktop-linux-distro.md` is the distro decision and

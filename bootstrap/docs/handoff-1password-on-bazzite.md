@@ -105,3 +105,12 @@ Do not re-derive what these already cover:
 - `bazzite-02-first-week.md` — exercise 2 is the `usroverlay` walkthrough; **unrun as of this handoff**
 - `bazzite-03-reference.md` — install decision tree, command cheatsheet, the system-group trap
 - `~/prog/distrobox/` — container definitions and README, now a git repo
+
+---
+
+## Outcome, 2026-09-20
+
+Resolved without usroverlay or layering: both Universal Blue Homebrew casks, nothing in
+`/usr`. SSH agent and `op` integration verified working. Two premises above turned out to
+be wrong (the RPM doesn't touch PAM; casks do run on Linux brew). Write-up in
+`1password-via-homebrew.md`.
