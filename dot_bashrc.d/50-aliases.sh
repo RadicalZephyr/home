@@ -159,7 +159,7 @@ status() {
 }
 
 # Convert the split HTML sections of an unpacked Kindle epub to markdown.
-markdownify() {
+pandoc-markdownify() {
     if ! command -v pandoc > /dev/null 2>&1
     then
         echo "Pandoc must be installed to markdownify an epub"
