@@ -1,11 +1,17 @@
 {
-  "model": "fable",
-  "modelSettings": {
-    "claude-fable-5-1": {}
-  },
-  "theme": "dark",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
-  }
+  },
+  "modelSettings": {
+    "claude-fable-5-1": {},
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {}
+  },
+  "theme": "dark",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
