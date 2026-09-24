@@ -17,11 +17,13 @@
 tap "ublue-os/tap", trusted: true
 
 brew "chezmoi"
+brew "bat"
 brew "eza"
 brew "zola"
 brew "mdbook"
 brew "markdownify"
 brew "pandoc"
+brew "nmap"
 
 # 1Password app and CLI from the Universal Blue tap. Installs the official
 # tarball under /home/linuxbrew (that is /var), so nothing in /usr changes and
