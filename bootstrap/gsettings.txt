@@ -1,0 +1,8 @@
+# Skip tracking repos that have files we don't need to search
+# This is a workaround for a segfault in `localsearch` when invoking
+# `rom-properties` on executable files, looks like a version mismatch
+# causing a null pointer dereference
+gsettings set org.freedesktop.Tracker3.Miner.Files ignored-directories-with-content "['.trackerignore', '.git', '.hg', '.nomedia', 'system.reg', 'CACHEDIR.TAG']"
+
+# Undo this setting
+gsettings reset org.freedesktop.Tracker3.Miner.Files ignored-directories-with-content
