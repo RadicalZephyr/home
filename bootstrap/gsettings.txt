@@ -6,3 +6,6 @@ gsettings set org.freedesktop.Tracker3.Miner.Files ignored-directories-with-cont
 
 # Undo this setting
 gsettings reset org.freedesktop.Tracker3.Miner.Files ignored-directories-with-content
+
+# Emacs keybindings in most Gnome aware apps
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
