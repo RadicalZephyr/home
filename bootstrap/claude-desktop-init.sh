@@ -37,3 +37,5 @@ apt-get install -y claude-desktop git
 # qemu-system-x86, ovmf and virtiofsd arrive as recommends — Cowork's local
 # KVM workspace VM needs them. Confirm after a rebuild:
 #   dpkg -l qemu-system-x86 ovmf virtiofsd
+
+apt-get install -y build-essential git cmake libsdl2-dev libglew-dev # For building CXBX-Reloaded
