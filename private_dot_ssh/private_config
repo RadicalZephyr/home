@@ -1,3 +1,15 @@
+Host mistral
+     HostName 192.168.0.15
+     User zefs
+     ForwardAgent yes
+     ForwardX11 yes
+
+Host pop-os
+     HostName 192.168.0.10
+     User zefs
+     ForwardAgent yes
+     ForwardX11 yes
+
 Host beaglebone
      HostName 192.168.7.2
      User debian
