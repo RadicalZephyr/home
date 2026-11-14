@@ -189,3 +189,11 @@ gh-clear-notifications() {
         echo "Finished clearing all notifications!"
     fi
 }
+
+check-crate-names() {
+    for n in $@
+        do
+        printf '%s %s\n' "$n" "$(curl -s -o /dev/null -w '%{http_code}' -A 'name-check (zefira@hey.com)' https://crates.io/api/v1/crates/$n)"
+        sleep 1
+    done
+}
