@@ -1,0 +1,10 @@
+# Included from ~/.gitconfig. Link this file into ~ only where 1Password's
+# op-ssh-sign is installed; the path is Homebrew's on Linux.
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHO3+LPDOj9ehhcl3OKDpzKBIVwsb7TdMmEDQpYngQCR
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /home/linuxbrew/.linuxbrew/bin/op-ssh-sign
+[commit]
+	gpgsign = true

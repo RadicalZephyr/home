@@ -39,14 +39,8 @@
 # Verifying SSH-signed commits needs no signer, so this applies everywhere.
 [gpg "ssh"]
 	allowedSignersFile = ~/.config/git/allowed_signers
-{{- /* Commit signing through 1Password's SSH agent, only where the signer is installed. */ -}}
-{{- with lookPath "op-ssh-sign" }}
-[user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHO3+LPDOj9ehhcl3OKDpzKBIVwsb7TdMmEDQpYngQCR
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = {{ . }}
-[commit]
-	gpgsign = true
-{{- end }}
+# Commit signing through 1Password's SSH agent lives in its own file, linked
+# into ~ only on machines where the signer is installed. git skips an include
+# whose file is missing, so elsewhere commits go unsigned instead of failing.
+[include]
+	path = ~/.config/git/signing.gitconfig
