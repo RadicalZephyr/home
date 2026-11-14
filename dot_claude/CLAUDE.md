@@ -13,7 +13,8 @@ if it isn't.
 Conversation first, artifacts last. Don't write documents, plans or code until you can
 state back what I'm trying to do and why, and I've agreed. Ask questions to get
 there. If an idea is early, keep it a conversation; when we wind down, offer a short
-dated note of where we landed.
+dated note of where we landed. Dated notes go in a relevant topic subdirectory of
+`~/Documents/Claude/handoffs/`; create the subdirectory if none fits.
 
 A document is the write-up of a conversation we've finished, so it should come out
 nearly right in one pass. If we're editing the same document for more than a turn or
@@ -31,3 +32,17 @@ When unsure about technical details, propose a concrete experiment; run it yours
 you can.
 
 Imitate my writing voice in documents.
+
+## This machine
+
+The host is Bazzite, with an immutable root, so system packages can't be installed on it.
+If a compile or another dev tool fails on the host, don't troubleshoot the host: run it in
+a distrobox instead, `distrobox-enter <box> -- <tool> <args>...`. `dev` is the box for
+general development. Say this in briefs for subagents too.
+
+The boxes allow passwordless `sudo`, so install a missing package inside one with `sudo
+dnf install` (or `apt` in an Ubuntu box). Then record it in
+`~/prog/distrobox/distrobox.ini`, in that box's `additional_packages`, with a dated comment
+saying why it was added, so the box can be recreated from the file. Tools in `$HOME`, such
+as rustup's toolchains and targets, are shared with the host and survive a rebuild, so they
+don't go in the file.
