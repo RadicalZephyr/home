@@ -262,3 +262,10 @@ Containerfile build once Bazzite moves to bootc. That plan moves out of here. Wh
 the triggers above fires, the image gets a new repo of its own. The layered list is still
 just `emacs-pgtk`. Until then, `bootstrap/` is the record of what an image would have to
 carry.
+
+## 2026-11-14: gdctl switches displays
+
+"GNOME exposes no CLI or API to switch the primary display" above is wrong now. Mutter
+ships `gdctl`, and `gdctl set` lays out the monitors and picks the primary in one command.
+`ijust tv-on` and `ijust tv-off` do the desk-to-TV flip with it, which also closes the open
+item on automating it.
