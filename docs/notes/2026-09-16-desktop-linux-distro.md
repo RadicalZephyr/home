@@ -1,6 +1,4 @@
-# ADR-001: Desktop Linux distribution
-
-**Status:** Draft **Date:** 2026-09-16
+# 2026-09-16: Desktop Linux distribution
 
 ## Context
 
@@ -252,3 +250,15 @@ so rollback-to-an-older-build degrades; plain `rpm-ostree rollback` still works.
   exact image being rebased to. Read it before the DX rebase.
 - Automating the GNOME primary-display flip for couch sessions. No API today; check again
   in a few months.
+
+## 2026-11-14: Folded into the dotfiles repo
+
+This was ADR-001 in `RadicalZephyr/bazzite-dx-radz`. That repo is now `bootstrap/` in my
+dotfiles repo, and I don't keep ADRs for my dotfiles, so it's a note now. Nothing above
+is rewritten.
+
+The old repo was named for the derived image: the plan was for it to become the
+Containerfile build once Bazzite moves to bootc. That plan moves out of here. When one of
+the triggers above fires, the image gets a new repo of its own. The layered list is still
+just `emacs-pgtk`. Until then, `bootstrap/` is the record of what an image would have to
+carry.

@@ -3,7 +3,7 @@
 - **Status:** Done, 2026-09-20
 - **Relates to:** `handoff-1password-on-bazzite.md` (the plan this replaced),
   `layering-shelf-life.md` §"The rule this gives you",
-  [ADR-0001](decisions/0001-desktop-linux-distro.md) §"Custom derived image: not now"
+  [the distro note](../../docs/notes/2026-09-16-desktop-linux-distro.md) §"Custom derived image: not now"
 
 ---
 
