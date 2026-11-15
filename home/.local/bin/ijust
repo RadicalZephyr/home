@@ -1,0 +1,8 @@
+#!/bin/sh
+# My own ujust: recipes from the global justfile, from any directory.
+#
+# A script rather than an alias so it also works from GNOME shortcuts and
+# non-interactive shells. It sets JUST_JUSTFILE instead of passing
+# --global-justfile because just's tab completion honors the variable and
+# ignores the flag; /usr/bin/ujust does the same.
+JUST_JUSTFILE="${XDG_CONFIG_HOME:-$HOME/.config}/just/justfile" exec just "$@"
