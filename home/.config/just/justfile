@@ -1,0 +1,33 @@
+# Recipes for this machine, run as `ijust <recipe>` from any directory.
+
+[private]
+default:
+    @just --justfile {{ justfile() }} --list
+
+# Desk monitors only. Pass --persistent to make it the login layout too.
+[group('display')]
+tv-off *flags:
+    gdctl set {{ flags }} --logical-monitor --primary --monitor DP-1 --monitor DP-2
+
+# Desk monitors, with the TV to their left.
+[group('display')]
+tv-on:
+    gdctl set --logical-monitor --primary --monitor DP-1 --monitor DP-2 --logical-monitor --monitor HDMI-1 --left-of DP-1
+
+# Emacs keybindings in most GNOME apps.
+[group('gnome')]
+emacs-keys:
+    gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+# Keep Tracker out of repos and other dirs with files nobody searches. This
+# works around a segfault in localsearch when it runs rom-properties on
+# executables; it looks like a version mismatch causing a null dereference.
+[doc('Keep Tracker out of repos and other dirs with files nobody searches.')]
+[group('gnome')]
+tracker-ignore:
+    gsettings set org.freedesktop.Tracker3.Miner.Files ignored-directories-with-content "['.trackerignore', '.git', '.hg', '.nomedia', 'system.reg', 'CACHEDIR.TAG']"
+
+# Undo tracker-ignore.
+[group('gnome')]
+tracker-ignore-reset:
+    gsettings reset org.freedesktop.Tracker3.Miner.Files ignored-directories-with-content
