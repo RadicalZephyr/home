@@ -4,6 +4,10 @@ Home
 My dotfiles. Every file under `home/` is symlinked to the same path in `~` by
 mise, from the `[dotfiles]` table in `mise.toml`.
 
+`bootstrap/` holds the rest of the workstation's setup: the Distrobox boxes, the
+Brewfile and the hand-written `/etc` files. It was its own repo until 2026-11-14;
+see `bootstrap/README.md`.
+
 On a new machine, with mise installed:
 
     git clone git@github.com:RadicalZephyr/home.git ~/.home
