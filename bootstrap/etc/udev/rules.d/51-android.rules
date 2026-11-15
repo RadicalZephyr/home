@@ -1,0 +1,1 @@
+SUBSYSTEM="usb", ATTR{bInterfaceClass}="ff", ATTR{bInterfaceSubClass}="42", ATTR{bInterfaceProtocol}="01", MODE="0660", GROUP="adbusers", TAG+="uaccess"
