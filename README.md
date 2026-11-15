@@ -1,24 +1,39 @@
 Home
 ----
 
-My dotfiles, managed with [chezmoi](https://www.chezmoi.io/).
+My dotfiles. Every file under `home/` is symlinked to the same path in `~` by
+mise, from the `[dotfiles]` table in `mise.toml`.
 
-On a new machine:
+On a new machine, with mise installed:
 
-    chezmoi init --apply RadicalZephyr/home
+    git clone git@github.com:RadicalZephyr/home.git ~/.home
+    cd ~/.home && mise trust && mise bootstrap
 
 Conventions
 -----------
 
-- Add files one at a time by name: `chezmoi add ~/.config/foo/bar`. Never add a
-  whole directory; several of them (`~/.claude`, `~/.config/gtk-3.0`) hold state
-  or secrets next to the config.
-- `dot_gitconfig.tmpl` and `dot_bashrc.d/30-env.sh.tmpl` are templates. Edit
-  them in this repo or with `chezmoi edit`, not the rendered copies in `~`.
-  They gate commit signing and `SSH_AUTH_SOCK` on `op-ssh-sign` being on PATH
-  at apply time, so re-run `chezmoi apply` after installing or removing 1Password.
-- Shell config lives in `~/.bashrc.d/`; `.bashrc` itself is Fedora's stock file.
-  Differences between the host and a distrobox on the same home are decided at
-  shell startup, not by templates, because both read the same rendered file.
-- The tag `hermit-final` is the last state of the previous Hermit-managed layout.
-  Anything not in the current tree was dropped on purpose; see `docs/notes/`.
+- Files are linked, directories never are. `~/.claude`, `~/.ssh` and
+  `~/.config/gtk-3.0` hold state or secrets next to the config, so they stay
+  real directories in `~`. To add a file, move it to the same path under
+  `home/` and re-run `mise bootstrap`.
+- The exception is `home/.claude/settings.json`: a reference copy, not linked.
+  Claude Code owns the live file and writes a generated `autoMode` block into
+  it that names local projects, which stays out of this public repo. Copy
+  changes over by hand, leaving that block out.
+- Don't run `chezmoi apply`. The old chezmoi checkout may still be on disk, and
+  applying it would replace the links with copies.
+- Edits happen in place: the file in `~` is the file in the repo. A program
+  that saves by writing a new file and renaming it over the old one replaces
+  the link with a plain file; `mise dot status` shows it.
+- No templates. Differences between machines, or between the host and a
+  distrobox on the same home, are decided at runtime: shell startup checks in
+  `~/.bashrc.d/`, and for git, an include of `~/.config/git/signing.gitconfig`,
+  which the `bootstrap` task links only where 1Password's `op-ssh-sign` is
+  installed.
+- Shell config lives in `~/.bashrc.d/`; `.bashrc` itself is Fedora's stock
+  file. When an installer appends to `.bashrc`, move its line into
+  `.bashrc.d/`.
+- The tag `hermit-final` is the last state of the Hermit-managed layout; the
+  chezmoi layout is the history from "Start fresh for migrating to chezmoi" up
+  to "Move dotfiles to plain names under home/". Anything not in the current
+  tree was dropped on purpose; see `docs/notes/`.
