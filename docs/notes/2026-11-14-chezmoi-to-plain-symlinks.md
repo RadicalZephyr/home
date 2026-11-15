@@ -99,3 +99,11 @@ What stays a script: anything a systemd unit or another program calls by path
 has to shadow the real binary on PATH), and anything long enough to want its
 own file (`check-gits`, `git-open-web`, `tmuxstart`). A recipe is for a line or
 two I'd otherwise keep in a text file to paste.
+
+Addendum: distrobox folded in
+-----------------------------
+
+`~/prog/distrobox` is now `bootstrap/`, with its history rewritten by
+`git filter-repo` so every commit has its `bootstrap/` path. Its ADR became
+`docs/notes/2026-09-16-desktop-linux-distro.md`; this repo doesn't use ADRs,
+and the derived image will get a repo of its own when it's needed.
