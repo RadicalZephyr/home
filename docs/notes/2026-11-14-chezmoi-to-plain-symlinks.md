@@ -74,3 +74,28 @@ drifts by hand-copy. The source has to live outside `home/`: with it under
 `home/`, `symlink-each` claims the same target, and mise either reports
 conflicting declarations or, with `--force`, would replace the live file with a
 link.
+
+Addendum: ijust for one-off machine commands
+--------------------------------------------
+
+Commands I run by hand but don't want a script for are now recipes in a global
+justfile, `home/.config/just/justfile`, run with `ijust` like Bazzite's `ujust`.
+`gsettings.txt` from `bootstrap/` became the `gnome` recipes, and the `tv-on`
+and `tv-off` scripts, which were never in the repo, became the `display` ones.
+`setup-monitors` was `tv-off` plus `--persistent`, so it's now
+`ijust tv-off --persistent`.
+
+`ijust` is a script, not an alias for `just -g`: an alias only works in an
+interactive shell, so a GNOME shortcut couldn't call it. The script sets
+`JUST_JUSTFILE` instead of passing `--global-justfile`, because just's tab
+completion follows the variable and ignores the flag; tested, the flag version
+completed nothing. `/usr/bin/ujust` does the same. The completion file is
+`JUST_COMPLETE=bash just` with the command renamed, which is also how Bazzite
+makes `ujust`'s, and bash-completion picks it up from
+`~/.local/share/bash-completion/completions/` on its own.
+
+What stays a script: anything a systemd unit or another program calls by path
+(`crate-name-watch` has a timer pointing at it, and the `claude-desktop` shim
+has to shadow the real binary on PATH), and anything long enough to want its
+own file (`check-gits`, `git-open-web`, `tmuxstart`). A recipe is for a line or
+two I'd otherwise keep in a text file to paste.
