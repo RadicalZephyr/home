@@ -1,12 +1,19 @@
+# Older mise reads the merge entry below as a plain symlink and fails.
+min_version = "2026.11.8"
+
 # Every file under home/ is symlinked to the same path in ~. Directories stay
 # real, so ~/.ssh, ~/.claude and ~/.config/gtk-3.0 keep their own permissions
 # and the state that lives next to the config.
 #
-# .claude/settings.json is a public-safe reference copy, not linked: Claude Code
-# owns the live file and writes a generated autoMode block into it that names
-# local projects, which this public repo leaves out.
+# Files under merge/ are merged key by key into a real file a program owns.
+# The repo's keys win on every apply; keys only the live file has are left
+# alone. ~/.claude/settings.json is one: Claude Code writes a generated
+# autoMode block into it that names local projects, and that block stays out
+# of this public repo. These sources live outside home/ because symlink-each
+# would otherwise claim the same target.
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [".config/git/signing.gitconfig", ".claude/settings.json"] }
+"~" = { source = "home", mode = "symlink-each", exclude = [".config/git/signing.gitconfig"] }
+"~/.claude/settings.json/shared" = { source = "merge/.claude/settings.json", merge = true }
 
 # Commit signing only where 1Password's signer is installed; see home/.gitconfig.
 # Runs on every `mise bootstrap`, so it has to stay safe to repeat.

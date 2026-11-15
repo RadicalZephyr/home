@@ -16,10 +16,12 @@ Conventions
   `~/.config/gtk-3.0` hold state or secrets next to the config, so they stay
   real directories in `~`. To add a file, move it to the same path under
   `home/` and re-run `mise bootstrap`.
-- The exception is `home/.claude/settings.json`: a reference copy, not linked.
-  Claude Code owns the live file and writes a generated `autoMode` block into
-  it that names local projects, which stays out of this public repo. Copy
-  changes over by hand, leaving that block out.
+- Files a program rewrites itself live under `merge/` instead, and mise merges
+  their keys into the real file in `~`. The repo's keys win on every apply, so
+  a setting changed in the program reverts unless it's changed here too; keys
+  only the live file has are left alone. `merge/.claude/settings.json` is the
+  one so far: Claude Code writes a generated `autoMode` block into it that
+  names local projects, and that block stays out of this public repo.
 - Don't run `chezmoi apply`. The old chezmoi checkout may still be on disk, and
   applying it would replace the links with copies.
 - Edits happen in place: the file in `~` is the file in the repo. A program

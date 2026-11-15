@@ -63,3 +63,14 @@ Still to do
   derived-image plan that folding retires.
 - Add the 1Password casks to the `bootstrap` task through real Homebrew; mise's
   own cask support couldn't evaluate the ublue tap's casks.
+
+Addendum: settings.json is merged, not excluded
+-----------------------------------------------
+
+mise's `merge` mode (2026.11.8 and later; 2026.9.12 read the entry as a plain
+symlink and failed) merges `merge/.claude/settings.json` into the live file key
+by key. The repo's keys win and `autoMode` is left alone, so the file no longer
+drifts by hand-copy. The source has to live outside `home/`: with it under
+`home/`, `symlink-each` claims the same target, and mise either reports
+conflicting declarations or, with `--force`, would replace the live file with a
+link.
