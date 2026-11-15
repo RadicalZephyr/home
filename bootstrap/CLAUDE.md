@@ -1,17 +1,16 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working in `bootstrap/`.
 
-## What this repo is
+## What this directory is
 
 The record of every customization made to `mistral`, a Bazzite DX workstation running
-`ghcr.io/ublue-os/bazzite-dx-nvidia-gnome:stable`. It exists because `rpm-ostree`
-layering has a shelf life (`docs/layering-shelf-life.md`), and the intent is for this repo
-to become the derived-image build once Bazzite moves to `bootc`: a Containerfile `FROM`
-the Bazzite DX image, published to a registry via CI. The GitHub remote is already named
-for that future (`RadicalZephyr/bazzite-dx-radz`); the local directory name is historical.
+`ghcr.io/ublue-os/bazzite-dx-nvidia-gnome:stable`, beyond the dotfiles in `../home/`. It
+was its own repo, `RadicalZephyr/bazzite-dx-radz`, until 2026-11-14. The derived image
+that repo was named for will get a new repo of its own when it's needed; see
+`../docs/notes/2026-09-16-desktop-linux-distro.md`. This repo doesn't use ADRs.
 
-The README still describes the repo as Distrobox-only. Distrobox is one piece of the
+The README still describes the directory as Distrobox-only. Distrobox is one piece of the
 customizations, so treat the README as lagging the scope, and widen it when touching it.
 
 ## Layout
@@ -24,9 +23,9 @@ customizations, so treat the README as lagging the scope, and widen it when touc
 - `etc/` — hand-written `/etc` files mirrored at their real paths. Files a package or
   cask generates are not mirrored; their source is the ini or the Brewfile.
 - `docs/` — notes on the host strategy: the `bazzite-0N-*.md` model/exercises/reference
-  trio, `layering-shelf-life.md`, and per-task handoffs.
-- `docs/decisions/` — ADRs. `0001-desktop-linux-distro.md` is the distro decision and
-  holds the layering cap and the derived-image triggers.
+  trio, `layering-shelf-life.md` and `1password-via-homebrew.md`.
+- `../docs/notes/2026-09-16-desktop-linux-distro.md` — the distro decision, the layering
+  cap and the derived-image triggers.
 
 ## Commands
 
