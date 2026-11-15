@@ -42,7 +42,7 @@ general development. Say this in briefs for subagents too.
 
 The boxes allow passwordless `sudo`, so install a missing package inside one with `sudo
 dnf install` (or `apt` in an Ubuntu box). Then record it in
-`~/prog/distrobox/distrobox.ini`, in that box's `additional_packages`, with a dated comment
-saying why it was added, so the box can be recreated from the file. Tools in `$HOME`, such
-as rustup's toolchains and targets, are shared with the host and survive a rebuild, so they
-don't go in the file.
+`~/.home/bootstrap/distrobox.ini`, in that box's `additional_packages`, with a dated
+comment saying why it was added, so the box can be recreated from the file. Tools in
+`$HOME`, such as rustup's toolchains and targets, are shared with the host and survive a
+rebuild, so they don't go in the file.
