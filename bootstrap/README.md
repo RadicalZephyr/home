@@ -85,17 +85,18 @@ Reference docs worth having open:
 
 ### First-time setup
 
+With the dotfiles repo cloned to `~/.home`:
+
 ```bash
-git clone <this repo> ~/prog/distrobox
-chmod +x ~/prog/distrobox/claude-desktop-init.sh
-distrobox assemble create --file ~/prog/distrobox/distrobox.ini
+chmod +x ~/.home/bootstrap/claude-desktop-init.sh
+distrobox assemble create --file ~/.home/bootstrap/distrobox.ini
 ```
 
 ### Rebuild a single container
 
 ```bash
 distrobox rm --force dev
-distrobox assemble create --file ~/prog/distrobox/distrobox.ini
+distrobox assemble create --file ~/.home/bootstrap/distrobox.ini
 ```
 
 `assemble create` only builds what's missing, so removing one box and re-running rebuilds
@@ -105,7 +106,7 @@ just that one.
 
 ```bash
 distrobox rm --force dev bwapi claude-desktop
-distrobox assemble create --file ~/prog/distrobox/distrobox.ini
+distrobox assemble create --file ~/.home/bootstrap/distrobox.ini
 ```
 
 Your `$HOME` is untouched by `distrobox rm` — the default home *is* the real home. Only
@@ -131,7 +132,7 @@ And one check, quarterly:
 
 ```bash
 distrobox rm --force dev
-distrobox assemble create --file ~/prog/distrobox/distrobox.ini
+distrobox assemble create --file ~/.home/bootstrap/distrobox.ini
 ```
 
 If the rebuilt box can't build your projects, this file had drifted and you just found out

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ~/prog/distrobox/claude-desktop-init.sh
+# ~/.home/bootstrap/claude-desktop-init.sh
 #
 # Runs as root inside the claude-desktop container during distrobox init.
 # Referenced by init_hooks in distrobox.ini.

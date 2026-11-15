@@ -1,9 +1,9 @@
-# ~/prog/distrobox/Brewfile
+# ~/.home/bootstrap/Brewfile
 #
 # Everything Homebrew manages on mistral.
 #
-# Apply:        unset SUDO_ASKPASS; brew bundle --file=~/prog/distrobox/Brewfile
-# Drift check:  brew bundle check --file=~/prog/distrobox/Brewfile
+# Apply:        unset SUDO_ASKPASS; brew bundle --file=~/.home/bootstrap/Brewfile
+# Drift check:  brew bundle check --file=~/.home/bootstrap/Brewfile
 #
 # The `unset` is not optional for the 1Password casks, and it applies to
 # `brew upgrade` too whenever one of them has a new version. Bazzite exports

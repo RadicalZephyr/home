@@ -36,7 +36,7 @@ Known-traps sections are the reference. The two that matter most:
 ```bash
 # Rebuild one box (assemble only builds what's missing). Same pair is the quarterly drift check.
 distrobox rm --force dev
-distrobox assemble create --file ~/prog/distrobox/distrobox.ini
+distrobox assemble create --file ~/.home/bootstrap/distrobox.ini
 
 # Host layered list; currently emacs-pgtk and nothing else.
 rpm-ostree status
