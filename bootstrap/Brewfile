@@ -16,7 +16,6 @@
 
 tap "ublue-os/tap", trusted: true
 
-brew "chezmoi"
 brew "bat"
 brew "eza"
 brew "zola"
