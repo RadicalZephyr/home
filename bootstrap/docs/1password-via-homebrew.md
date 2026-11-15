@@ -1,7 +1,8 @@
 # 1Password on the host: Homebrew casks, not layering
 
 - **Status:** Done, 2026-09-20
-- **Relates to:** `handoff-1password-on-bazzite.md` (the plan this replaced),
+- **Relates to:** `~/Documents/Claude/handoffs/system/2026-09-20-handoff-1password-on-bazzite.md`
+  (the plan this replaced),
   `layering-shelf-life.md` §"The rule this gives you",
   [the distro note](../../docs/notes/2026-09-16-desktop-linux-distro.md) §"Custom derived image: not now"
 
